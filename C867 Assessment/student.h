@@ -14,14 +14,14 @@ public:
 	void SetEmailAddress(string emailAddress);
 	void SetStudentAge(int studentAge);
 	void SetDaysCourseComplete(int daysCourseComplete);
-	//virtual void SetDegreeType() = 0;
+	//virtual void SetDegreeType() = 0;  //supposed to be pure virtual func??
 	int GetStudentId();
 	string GetFirstName();
 	string GetLastName();
 	string GetEmailAddress();
 	int GetStudentAge();
 	int GetDaysCourseComplete();
-	string GetDegreeType();
+	string GetDegreeType(); //supposed to be pure virtual func??
 
 	//virtual ~Student();
 private:
@@ -32,7 +32,7 @@ private:
 	int studentAge;
 	int daysCourseComplete[3] = { 0, 1, 2 }; //FIXME!! Is this correct???
 protected:
-	string degreeType;
+	string degreeType; //populated in subclasses
 };
 
 #endif
