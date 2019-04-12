@@ -1,4 +1,7 @@
-#pragma once
+#ifndef ROSTER_H
+#define ROSTER_H
+
+
 class roster
 {
 public:
@@ -6,3 +9,4 @@ public:
 	~roster();
 };
 
+#endif

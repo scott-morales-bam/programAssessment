@@ -3,4 +3,4 @@
 
 enum Degree { SECURITY, NETWORKING, SOFTWARE };
 
-#endif // !DEGREE_H
+#endif
