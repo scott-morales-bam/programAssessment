@@ -1,6 +1,7 @@
 #ifndef STUDENT_H
 #define STUDENT_H
 
+#include "degree.h"
 #include <string>
 using namespace std;
 
@@ -28,7 +29,7 @@ public:
 	void SetEmailAddress(const string emailAddress);
 	void SetStudentAge(const int studentAge);
 	void SetDaysCourseComplete(const int daysCourseComplete[]);
-	virtual void SetDegreeType() = 0;  //pure virtual func - set in subclass
+	void SetDegreeType(const Degree degreeType);  //FIX ME!! virtual func?
 	
 	//2d - print specific student data
 	virtual void printData();
@@ -40,7 +41,7 @@ private:
 	int* studentAge;
 	int* daysCourseComplete[3]; //FIXME!! Is this correct???
 protected:
-	string degreeType; //populated in subclasses
+	Degree* degreeType; //populated in subclasses
 };
 
 #endif

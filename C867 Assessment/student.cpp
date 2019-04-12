@@ -15,6 +15,7 @@ Student::Student()
 	studentAge = new int;
 	*studentAge = 10;
 	daysCourseComplete[3] = new int; //FIXME!! figure out how to Construct init values
+	//degreeType = new string; //FIXME!! This go here??
 
 	return;
 }
@@ -25,6 +26,8 @@ Student::~Student(){
 	delete lastName;
 	delete emailAddress;
 	delete studentAge;
+	delete daysCourseComplete;
+	delete degreeType; 
 }
 
 //2a - Accessors
@@ -73,6 +76,10 @@ void Student::SetDaysCourseComplete(const int daysCourseComplete[]) {
 		*this->daysCourseComplete[i] = daysCourseComplete[i];
 		return;
 	}
+}
+void Student::SetDegreeType(const Degree degreeType) {
+	*this->degreeType = degreeType;
+	return;
 }
 
 
