@@ -7,22 +7,34 @@ using namespace std;
 class Student
 {
 public:
+
+	//2c - Constructor
 	Student();
-	void SetStudentId(int studentId);
-	void SetFirstName(string firstName);
-	void SetLastName(string lastName);
-	void SetEmailAddress(string emailAddress);
-	void SetStudentAge(int studentAge);
-	void SetDaysCourseComplete(int daysCourseComplete);
-	//virtual void SetDegreeType() = 0;  //supposed to be pure virtual func??
+
+	//2a - Accessors
 	int GetStudentId();
 	string GetFirstName();
 	string GetLastName();
 	string GetEmailAddress();
 	int GetStudentAge();
 	int GetDaysCourseComplete();
-	string GetDegreeType(); //supposed to be pure virtual func??
+	//virtual string GetDegreeProgram() = 0; //pure virtual func - set in subclass
 
+	//2b - Mutators
+	void SetStudentId(int studentId);
+	void SetFirstName(string firstName);
+	void SetLastName(string lastName);
+	void SetEmailAddress(string emailAddress);
+	void SetStudentAge(int studentAge);
+	void SetDaysCourseComplete(int daysCourseComplete[]);
+	//virtual void SetDegreeType() = 0;  //pure virtual func - set in subclass
+	
+	//2d - print specific student data
+	virtual void printData();
+	
+
+	
+	
 	//virtual ~Student();
 private:
 	int studentId;

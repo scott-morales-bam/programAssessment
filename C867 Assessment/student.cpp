@@ -1,7 +1,7 @@
 #include "student.h"
 
 
-
+//2c - Constructor
 Student::Student()
 {
 	studentId = 0;
@@ -14,29 +14,7 @@ Student::Student()
 	return;
 }
 
-
-void Student::SetStudentId(int studentId) {
-	this->studentAge = studentId;
-	return;
-}
-void Student::SetFirstName(string firstName) {
-	this->firstName = firstName;
-	return;
-}
-void Student::SetLastName(string lastName) {
-	this->lastName = lastName;
-	return;
-}
-void Student::SetEmailAddress(string emailAddress) {
-	this->emailAddress = emailAddress;
-	return;
-}
-void Student::SetStudentAge(int studentAge) {
-	this->studentAge = studentAge;
-	return;
-}
-//void Student::SetDaysCourseComplete(int daysCourseComplete) {} //FIXME!! not sure about these yet
-//virtual void Student::SetDegreeType() = 0 {} //FIXME!! not sure about these yet
+//2a - Accessors
 int Student::GetStudentId() {
 	return studentId;
 }
@@ -55,3 +33,35 @@ int Student::GetStudentAge() {
 int Student::GetDaysCourseComplete() {
 	return daysCourseComplete[0];
 }
+
+//2b - Mutators
+void Student::SetStudentId(int studentId) {
+	this->studentId = studentId;
+	return;
+}
+void Student::SetFirstName(string firstName) {
+	this->firstName = firstName;
+	return;
+}
+void Student::SetLastName(string lastName) {
+	this->lastName = lastName;
+	return;
+}
+void Student::SetEmailAddress(string emailAddress) {
+	this->emailAddress = emailAddress;
+	return;
+}
+void Student::SetStudentAge(int studentAge) {
+	this->studentAge = studentAge;
+	return;
+}
+void Student::SetDaysCourseComplete(int daysCourseComplete[]) {
+	for (int i = 0; i < 3; ++i) {
+		this->daysCourseComplete[i] = daysCourseComplete[i];
+		return;
+	}
+}
+
+
+//2d - print specific student data
+void Student::printData(){}
