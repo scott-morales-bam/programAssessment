@@ -12,60 +12,65 @@ Student::Student()
 	*lastName = "emptyLast";
 	emailAddress = new string;
 	*emailAddress = "empty@man.com";
+	studentAge = new int;
 	*studentAge = 10;
-	//daysCourseComplete = { 0, 1, 2 }; //FIXME!! figure out how to Construct init values
+	daysCourseComplete[3] = new int; //FIXME!! figure out how to Construct init values
 
 	return;
 }
 
-//Student::~Student(){
-//	delete 
-//}
+Student::~Student(){
+	delete studentId;
+	delete firstName;
+	delete lastName;
+	delete emailAddress;
+	delete studentAge;
+}
 
 //2a - Accessors
 int Student::GetStudentId() const {
-	return studentId;
+	return *studentId;
 }
 string Student::GetFirstName() const {
-	return firstName;
+	return *firstName;
 }
 string Student::GetLastName() const {
-	return lastName;
+	return *lastName;
 }
 string Student::GetEmailAddress() const {
-	return emailAddress;
+	return *emailAddress;
 }
 int Student::GetStudentAge() const {
-	return studentAge;
+	return *studentAge;
 }
 int Student::GetDaysCourseComplete() const {
-	return daysCourseComplete[0];
+	return *daysCourseComplete[0];
 }
 
 //2b - Mutators
 void Student::SetStudentId(const int studentId) {
-	this->studentId = studentId;
+	*this->studentId = studentId;
 	return;
 }
 void Student::SetFirstName(const string firstName) {
-	this->firstName = firstName;
+	*this->firstName = firstName;
 	return;
 }
 void Student::SetLastName(const string lastName) {
-	this->lastName = lastName;
+	*this->lastName = lastName;
 	return;
 }
 void Student::SetEmailAddress(const string emailAddress) {
-	this->emailAddress = emailAddress;
+	*this->emailAddress = emailAddress;
 	return;
 }
 void Student::SetStudentAge(const int studentAge) {
-	this->studentAge = studentAge;
+	*this->studentAge = studentAge;
 	return;
 }
 void Student::SetDaysCourseComplete(const int daysCourseComplete[]) {
 	for (int i = 0; i < 3; ++i) {
-		this->daysCourseComplete[i] = daysCourseComplete[i];
+		*this->daysCourseComplete[i] = daysCourseComplete[i];
 		return;
 	}
 }
