@@ -33,12 +33,12 @@ public:
 	//2d - print specific student data
 	virtual void printData();
 private:
-	int studentId;
-	string firstName;
-	string lastName;
-	string emailAddress;
-	int studentAge;
-	int daysCourseComplete[3] = { 0, 1, 2 }; //FIXME!! Is this correct???
+	int* studentId;
+	string* firstName;
+	string* lastName;
+	string* emailAddress;
+	int* studentAge;
+	int* daysCourseComplete[3]; //FIXME!! Is this correct???
 protected:
 	string degreeType; //populated in subclasses
 };

@@ -4,20 +4,24 @@
 //2c, 2e - Constructor, Destructor
 Student::Student()
 {
-	studentId = 0;
-	firstName = "emptyFirst";
-	lastName = "emptyLast";
-	emailAddress = "empty@man.com";
-	studentAge = 10;
+	studentId = new int;
+	*studentId = 0;
+	firstName = new string;
+	*firstName = "emptyFirst";
+	lastName = new string;
+	*lastName = "emptyLast";
+	emailAddress = new string;
+	*emailAddress = "empty@man.com";
+	*studentAge = 10;
 	//daysCourseComplete = { 0, 1, 2 }; //FIXME!! figure out how to Construct init values
 
 	return;
 }
-/*
-Student::~Student(){
-	delete 
-}
-*/
+
+//Student::~Student(){
+//	delete 
+//}
+
 //2a - Accessors
 int Student::GetStudentId() const {
 	return studentId;
