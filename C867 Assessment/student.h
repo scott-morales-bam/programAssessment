@@ -8,34 +8,30 @@ class Student
 {
 public:
 
-	//2c - Constructor
+	//2c,2e - Constructor, Destructor
 	Student();
+	~Student();
 
 	//2a - Accessors
-	int GetStudentId();
-	string GetFirstName();
-	string GetLastName();
-	string GetEmailAddress();
-	int GetStudentAge();
-	int GetDaysCourseComplete();
-	//virtual string GetDegreeProgram() = 0; //pure virtual func - set in subclass
+	int GetStudentId() const;
+	string GetFirstName() const;
+	string GetLastName() const;
+	string GetEmailAddress() const;
+	int GetStudentAge() const;
+	int GetDaysCourseComplete() const;
+	virtual string GetDegreeProgram() = 0; //pure virtual func - set in subclass
 
 	//2b - Mutators
-	void SetStudentId(int studentId);
-	void SetFirstName(string firstName);
-	void SetLastName(string lastName);
-	void SetEmailAddress(string emailAddress);
-	void SetStudentAge(int studentAge);
-	void SetDaysCourseComplete(int daysCourseComplete[]);
-	//virtual void SetDegreeType() = 0;  //pure virtual func - set in subclass
+	void SetStudentId(const int studentId);
+	void SetFirstName(const string firstName);
+	void SetLastName(const string lastName);
+	void SetEmailAddress(const string emailAddress);
+	void SetStudentAge(const int studentAge);
+	void SetDaysCourseComplete(const int daysCourseComplete[]);
+	virtual void SetDegreeType() = 0;  //pure virtual func - set in subclass
 	
 	//2d - print specific student data
 	virtual void printData();
-	
-
-	
-	
-	//virtual ~Student();
 private:
 	int studentId;
 	string firstName;
