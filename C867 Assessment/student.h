@@ -13,7 +13,7 @@ public:
 	void SetLastName(string lastName);
 	void SetEmailAddress(string emailAddress);
 	void SetStudentAge(int studentAge);
-	//void SetDaysCourseComplete(int daysCourseComplete);
+	void SetDaysCourseComplete(int daysCourseComplete);
 	//virtual void SetDegreeType() = 0;
 	int GetStudentId();
 	string GetFirstName();
