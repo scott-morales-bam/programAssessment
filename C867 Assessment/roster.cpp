@@ -27,7 +27,6 @@ int main() {
 		cout << "Student email:     " << scott->GetEmailAddress() << endl;
 		cout << "Student age:       " << scott->GetStudentAge() << endl;
 		cout << "Days left:         " << scott->GetDaysCourseComplete() << endl;
-		cout << "Degree Type:       " << scott->GetDegreeType() << endl;
 		
 		cout << "enter 'q' to quit...";
 		cin >> exitSign;

@@ -30,7 +30,7 @@ private:
 	string lastName;
 	string emailAddress;
 	int studentAge;
-	int daysCourseComplete[3];
+	int daysCourseComplete[3] = { 0, 1, 2 }; //FIXME!! Is this correct???
 protected:
 	string degreeType;
 };

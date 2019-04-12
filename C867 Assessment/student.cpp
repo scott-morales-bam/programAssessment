@@ -9,6 +9,7 @@ Student::Student()
 	lastName = "emptyLast";
 	emailAddress = "empty@man.com";
 	studentAge = 10;
+	//daysCourseComplete = { 0, 1, 2 }; FIXME!! figure out how to Construct init values
 
 	return;
 }
@@ -22,25 +23,20 @@ void Student::SetStudentAge(int studentAge) {}
 //void Student::SetDaysCourseComplete(int daysCourseComplete) {}
 //virtual void Student::SetDegreeType() = 0 {}
 int Student::GetStudentId() {
-	return 0;
+	return studentId;
 }
 string Student::GetFirstName() {
-	return "Man";
+	return firstName;
 }
 string Student::GetLastName() {
-	return "Cub";
+	return lastName;
 }
 string Student::GetEmailAddress() {
-	return "mancub@gmail.com";
+	return emailAddress;
 }
 int Student::GetStudentAge() {
-	return 31;
+	return studentAge;
 }
 int Student::GetDaysCourseComplete() {
-	return 8;
+	return daysCourseComplete[0];
 }
-string Student::GetDegreeType() {
-	return "Bach CS";
-}
-
-
