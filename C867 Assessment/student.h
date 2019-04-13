@@ -3,6 +3,7 @@
 
 #include "degree.h"
 #include <string>
+#include <iostream>
 using namespace std;
 
 class Student
@@ -20,7 +21,7 @@ public:
 	string GetEmailAddress() const;
 	int GetStudentAge() const;
 	int GetDaysCourseComplete() const;
-	virtual string GetDegreeProgram() = 0; //pure virtual func - set in subclass
+	virtual string GetDegreeProgram() = 0; //pure virtual func - set in subclass FIX ME!! Need to be enum Degree?
 
 	//2b - Mutators
 	void SetStudentId(const int studentId);

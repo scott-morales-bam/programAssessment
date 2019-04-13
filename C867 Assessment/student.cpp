@@ -5,17 +5,12 @@
 Student::Student()
 {
 	studentId = new int;
-	*studentId = 0;
 	firstName = new string;
-	*firstName = "emptyFirst";
 	lastName = new string;
-	*lastName = "emptyLast";
 	emailAddress = new string;
-	*emailAddress = "empty@man.com";
 	studentAge = new int;
-	*studentAge = 10;
 	daysCourseComplete[3] = new int; //FIXME!! figure out how to Construct init values
-	//degreeType = new string; //FIXME!! This go here??
+	degreeType = new Degree;
 
 	return;
 }
@@ -85,6 +80,6 @@ void Student::SetDegreeType(const Degree degreeType) {
 
 //2d - print specific student data
 void Student::printData(){
-	
+	cout << "Name: " << GetFirstName() << " " << GetLastName(); //FIX ME!! finish this
 	return;
 }
