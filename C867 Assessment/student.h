@@ -21,7 +21,7 @@ public:
 	//string GetEmailAddress() const;
 	//int GetStudentAge() const;
 	//int GetDaysCourseComplete() const;
-	//virtual string GetDegreeProgram() = 0; //pure virtual func - set in subclass FIX ME!! Need to be enum Degree?
+	virtual void GetDegreeProgram() = 0; //pure virtual func - set in subclass FIX ME!! Need to be enum Degree?
 
 	//2b - Mutators
 	void SetStudentId(const int studentId);
@@ -41,8 +41,8 @@ private:
 //	string* emailAddress;
 //	int* studentAge;
 //	int* daysCourseComplete[3]; //FIXME!! Is this correct???
-//protected:
-//	Degree* degreeType; //populated in subclasses
+protected:
+	Degree* degreeType; //populated in subclasses
 };
 
 #endif
