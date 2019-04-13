@@ -16,33 +16,33 @@ public:
 
 	//2a - Accessors
 	int GetStudentId() const;
-	string GetFirstName() const;
-	string GetLastName() const;
-	string GetEmailAddress() const;
-	int GetStudentAge() const;
-	int GetDaysCourseComplete() const;
-	virtual string GetDegreeProgram() = 0; //pure virtual func - set in subclass FIX ME!! Need to be enum Degree?
+	//string GetFirstName() const;
+	//string GetLastName() const;
+	//string GetEmailAddress() const;
+	//int GetStudentAge() const;
+	//int GetDaysCourseComplete() const;
+	//virtual string GetDegreeProgram() = 0; //pure virtual func - set in subclass FIX ME!! Need to be enum Degree?
 
 	//2b - Mutators
 	void SetStudentId(const int studentId);
-	void SetFirstName(const string firstName);
-	void SetLastName(const string lastName);
-	void SetEmailAddress(const string emailAddress);
-	void SetStudentAge(const int studentAge);
-	void SetDaysCourseComplete(const int daysCourseComplete[]);
-	void SetDegreeType(const Degree degreeType);  //FIX ME!! virtual func?
-	
+	//void SetFirstName(const string firstName);
+	//void SetLastName(const string lastName);
+	//void SetEmailAddress(const string emailAddress);
+	//void SetStudentAge(const int studentAge);
+	//void SetDaysCourseComplete(const int *daysCourseComplete[], int arrLength);
+	//void SetDegreeType(const Degree degreeType);  //FIX ME!! virtual func?
+	//
 	//2d - print specific student data
 	virtual void printData();
 private:
 	int* studentId;
-	string* firstName;
-	string* lastName;
-	string* emailAddress;
-	int* studentAge;
-	int* daysCourseComplete[3]; //FIXME!! Is this correct???
-protected:
-	Degree* degreeType; //populated in subclasses
+//	string* firstName;
+//	string* lastName;
+//	string* emailAddress;
+//	int* studentAge;
+//	int* daysCourseComplete[3]; //FIXME!! Is this correct???
+//protected:
+//	Degree* degreeType; //populated in subclasses
 };
 
 #endif
