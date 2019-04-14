@@ -8,11 +8,13 @@ using namespace std;
 #include "student.h"
 #include "securityStudent.h"
 
-class roster {
+class Roster {
 public:
 	void SetClassRosterArray();
+
 private:
-	string* classRosterArray[2];
+	
+	Student* classRosterArray[1];
 };
 
 #endif
