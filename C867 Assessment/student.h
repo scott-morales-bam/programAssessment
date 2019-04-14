@@ -11,6 +11,7 @@ public:
 
 	//2c,2e - Constructor, Destructor
 	Student();
+	Student(int studentId);
 	~Student();
 
 	//2a - Accessors

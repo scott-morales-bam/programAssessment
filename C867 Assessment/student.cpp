@@ -1,8 +1,7 @@
 #include "student.h"
 
 //2c, 2e - Constructor, Destructor
-Student::Student()
-{
+Student::Student() {
 	studentId = new int;
 	cout << "new student id created" << endl;
 	//firstName = new string;
@@ -13,6 +12,11 @@ Student::Student()
 	degreeType = new Degree;
 
 	return;
+}
+
+Student::Student(int studentId) {
+	this->studentId = new int;
+	*this->studentId = studentId;
 }
 
 Student::~Student(){
@@ -74,7 +78,7 @@ void Student::SetStudentId(const int studentId) {
 //		return;
 //	}
 //}
-//void Student::SetDegreeType() {
+//void Student::SetDegreeType() { //   ***DONT NEED THIS***
 //	*this->degreeType = deg;
 //	return;
 //}
