@@ -10,7 +10,7 @@ Student::Student()
 	//emailAddress = new string;
 	//studentAge = new int;
 	//daysCourseComplete[3] = new int; //FIXME!! figure out how to Construct init values
-	//degreeType = new Degree;
+	degreeType = new Degree;
 
 	return;
 }
@@ -23,7 +23,7 @@ Student::~Student(){
 	//delete emailAddress;
 	//delete studentAge;
 	//delete daysCourseComplete;
-	//delete degreeType; 
+	delete degreeType; 
 }
 
 //2a - Accessors
@@ -74,8 +74,8 @@ void Student::SetStudentId(const int studentId) {
 //		return;
 //	}
 //}
-//void Student::SetDegreeType(const Degree degreeType) {
-//	*this->degreeType = degreeType;
+//void Student::SetDegreeType() {
+//	*this->degreeType = deg;
 //	return;
 //}
 
@@ -83,5 +83,6 @@ void Student::SetStudentId(const int studentId) {
 //2d - print specific student data
 void Student::printData(){
 	cout << "Printing Student ID: " << GetStudentId() << endl;
+	cout << "Printing Degree Type: " << GetDegreeProgram() << endl;
 	return;
 }

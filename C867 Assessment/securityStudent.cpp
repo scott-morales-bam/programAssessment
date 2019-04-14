@@ -1,15 +1,11 @@
 #include "securityStudent.h"
 
-//SecurityStudent::SecurityStudent()	***possibly not needed***
-//{
-//	degreeProgram = new Degree;
-//}										
 
 
-//SecurityStudent::~SecurityStudent()   ***possibly not needed***
-//{
-//}
+Degree SecurityStudent::GetDegreeProgram(){
+	return *degreeType;
+}
 
-void SecurityStudent::GetDegreeProgram(){
-	degreeType = &degreeProgram;
+void SecurityStudent::SetDegreeType() {
+	*degreeType = degreeProgram;
 }

@@ -3,13 +3,10 @@
 
 #include "student.h"
 
-class SecurityStudent :
-	public Student
-{
+class SecurityStudent :	public Student {
 public:
-	//SecurityStudent();
-	//~SecurityStudent();
-	void GetDegreeProgram();
+	Degree GetDegreeProgram();
+	void SetDegreeType();
 private:
 	Degree degreeProgram = SECURITY;
 };

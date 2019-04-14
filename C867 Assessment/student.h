@@ -6,8 +6,7 @@
 #include <iostream>
 using namespace std;
 
-class Student
-{
+class Student {
 public:
 
 	//2c,2e - Constructor, Destructor
@@ -21,7 +20,7 @@ public:
 	//string GetEmailAddress() const;
 	//int GetStudentAge() const;
 	//int GetDaysCourseComplete() const;
-	virtual void GetDegreeProgram() = 0; //pure virtual func - set in subclass FIX ME!! Need to be enum Degree?
+	virtual Degree GetDegreeProgram() = 0; //pure virtual func - set in subclass FIX ME!! Need to be enum Degree?
 
 	//2b - Mutators
 	void SetStudentId(const int studentId);
@@ -30,8 +29,8 @@ public:
 	//void SetEmailAddress(const string emailAddress);
 	//void SetStudentAge(const int studentAge);
 	//void SetDaysCourseComplete(const int *daysCourseComplete[], int arrLength);
-	//void SetDegreeType(const Degree degreeType);  //FIX ME!! virtual func?
-	//
+	//void SetDegreeType();  //FIX ME!! virtual func?
+	
 	//2d - print specific student data
 	virtual void printData();
 private:

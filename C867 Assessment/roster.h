@@ -1,12 +1,18 @@
 #ifndef ROSTER_H
 #define ROSTER_H
 
+#include <iostream>
+using namespace std;
 
-class roster
-{
+#include "roster.h"
+#include "student.h"
+#include "securityStudent.h"
+
+class roster {
 public:
-	roster();
-	~roster();
+	void SetClassRosterArray();
+private:
+	string* classRosterArray[2];
 };
 
 #endif
