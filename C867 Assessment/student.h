@@ -11,11 +11,11 @@ public:
 
 	//2c,2e - Constructor, Destructor
 	Student();
-	Student(int studentId);
+	Student(string studentId);
 	~Student();
 
 	//2a - Accessors
-	int GetStudentId() const;
+	string GetStudentId() const;
 	//string GetFirstName() const;
 	//string GetLastName() const;
 	//string GetEmailAddress() const;
@@ -35,7 +35,7 @@ public:
 	//2d - print specific student data
 	virtual void printData();
 private:
-	int* studentId;
+	string* studentId;
 //	string* firstName;
 //	string* lastName;
 //	string* emailAddress;

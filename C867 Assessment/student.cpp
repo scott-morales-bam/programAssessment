@@ -2,7 +2,7 @@
 
 //2c, 2e - Constructor, Destructor
 Student::Student() {
-	studentId = new int;
+	studentId = new string;
 	cout << "new student id created" << endl;
 	//firstName = new string;
 	//lastName = new string;
@@ -14,24 +14,26 @@ Student::Student() {
 	return;
 }
 
-Student::Student(int studentId) {
-	this->studentId = new int;
+Student::Student(string studentId) {
+	this->studentId = new string;
 	*this->studentId = studentId;
+	cout << "created student object" << endl;
 }
 
 Student::~Student(){
-	cout << "deleting student id" << endl;
+	cout << "deleting studentId" << endl;
 	delete studentId;
 	//delete firstName;
 	//delete lastName;
 	//delete emailAddress;
 	//delete studentAge;
 	//delete daysCourseComplete;
+	cout << "deleting degreeType" << endl;
 	delete degreeType; 
 }
 
 //2a - Accessors
-int Student::GetStudentId() const {
+string Student::GetStudentId() const {
 	return *studentId;
 }
 //string Student::GetFirstName() const {

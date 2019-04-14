@@ -10,11 +10,16 @@ using namespace std;
 
 class Roster {
 public:
+	Roster();
+	~Roster();
 	void SetClassRosterArray();
-
+	void ParseStudentId(string studentData);
 private:
-	
-	Student* classRosterArray[1];
+	Student* classRosterArray[5];
+	int firstCommaLocation;
+	int stringLength;
+	string* studentId;
+
 };
 
 #endif

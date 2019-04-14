@@ -5,7 +5,8 @@
 
 class SecurityStudent :	public Student {
 public:
-	SecurityStudent(int studentId);
+	SecurityStudent(string studentId);
+	~SecurityStudent();
 	Degree GetDegreeProgram();
 	void SetDegreeType();
 private:
