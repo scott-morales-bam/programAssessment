@@ -5,10 +5,11 @@
 
 class SecurityStudent :	public Student {
 public:
+	SecurityStudent(int studentId);
 	Degree GetDegreeProgram();
 	void SetDegreeType();
 private:
-	Degree degreeProgram = SECURITY;
+	Degree* degreeProgram;
 };
 
 #endif
