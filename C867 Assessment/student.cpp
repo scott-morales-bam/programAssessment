@@ -45,7 +45,7 @@ string Student::GetStudentId() const {
 //string Student::GetEmailAddress() const {
 //	return *emailAddress;
 //}
-//int Student::GetStudentAge() const {
+//string Student::GetStudentAge() const {
 //	return *studentAge;
 //}
 //int Student::GetDaysCourseComplete() const {

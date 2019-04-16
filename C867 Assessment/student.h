@@ -19,7 +19,7 @@ public:
 	//string GetFirstName() const;
 	//string GetLastName() const;
 	//string GetEmailAddress() const;
-	//int GetStudentAge() const;
+	//string GetStudentAge() const;
 	//int GetDaysCourseComplete() const;
 	virtual Degree GetDegreeProgram() = 0; //pure virtual func - set in subclass FIX ME!! Need to be enum Degree?
 
@@ -28,7 +28,7 @@ public:
 	//void SetFirstName(const string firstName);
 	//void SetLastName(const string lastName);
 	//void SetEmailAddress(const string emailAddress);
-	//void SetStudentAge(const int studentAge);
+	//void SetStudentAge(const string studentAge);
 	//void SetDaysCourseComplete(const int *daysCourseComplete[], int arrLength);
 	//void SetDegreeType();  //FIX ME!! virtual func?
 	
@@ -39,7 +39,7 @@ private:
 //	string* firstName;
 //	string* lastName;
 //	string* emailAddress;
-//	int* studentAge;
+//	string* studentAge;
 //	int* daysCourseComplete[3]; //FIXME!! Is this correct???
 protected:
 	Degree* degreeType; //populated in subclasses

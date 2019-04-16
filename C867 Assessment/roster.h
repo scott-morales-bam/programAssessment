@@ -2,6 +2,9 @@
 #define ROSTER_H
 
 #include <iostream>
+#include <string>
+#include <vector>
+#include <sstream>
 using namespace std;
 
 #include "roster.h"
@@ -16,9 +19,13 @@ public:
 	void ParseStudentId(string studentData);
 private:
 	Student* classRosterArray[5];
-	int firstCommaLocation;
-	int stringLength;
-	string* studentId;
+	string studentId;
+	string firstName;
+	string lastName;
+	string email;
+	string age;
+	int daysleft[3];
+	string degreeType;
 
 };
 

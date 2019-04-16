@@ -12,12 +12,19 @@ Roster::Roster() {
 
 	//Loop through provided Data Table and create 5 default student objects
 	//for (int i = 0; i < 5; ++i) {
-		//use switch to determine which student object to call
+		//use switch to determine which student object to call?
 	cout << "Created roster" << endl;
 	ParseStudentId(studentData[0]);
-	SecurityStudent* newStudent = nullptr;
-	newStudent = new SecurityStudent(*studentId);
-	//}
+	
+	//create new student object - passing in arguments
+	//SecurityStudent* newStudent = nullptr;
+	//newStudent = new SecurityStudent(studentId);
+
+	/*
+	Student roster = nullptr;
+	classRosterArray.at(0) = newStudent;
+	cout << classRosterArray[0] << "= classRosterArray[0]." << endl;
+	*/
 }
 
 Roster::~Roster() {
@@ -26,9 +33,25 @@ Roster::~Roster() {
 }
 
 void Roster::ParseStudentId(string studentData) {
-	this->firstCommaLocation = 0;
-	this->stringLength = studentData.find(',');
-	this->studentId = &studentData.substr(firstCommaLocation, stringLength);
+	
+	stringstream studentSS(studentData);
+	vector<string> studentDataVector;
+
+	for (int i = 0; i < 9; ++i) {
+		string substr;
+		getline(studentSS, substr, ',');
+		studentDataVector.push_back(substr);
+	}
+	
+	studentId = studentDataVector.at(0);
+	firstName = studentDataVector.at(1);
+	lastName  = studentDataVector.at(2);
+	email     = studentDataVector.at(3);
+	age       = studentDataVector.at(4);
+	daysleft[0] = stoi(studentDataVector.at(5));
+	daysleft[1] = stoi(studentDataVector.at(6));
+	daysleft[2] = stoi(studentDataVector.at(7));
+	degreeType = studentDataVector.at(8);
 }
 
 void Roster::SetClassRosterArray() {
