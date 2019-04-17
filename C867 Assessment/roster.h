@@ -18,7 +18,7 @@ public:
 	void SetClassRosterArray();
 	void ParseStudentId(string studentData);
 	//required functions E(3)(a-f)
-	void add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, <degree program>);
+	void add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, Degree type);
 	void remove(string studentID);
 	void printAll();
 	void printDaysInCourse(string studentID);
@@ -31,7 +31,9 @@ private:
 	string lastName;
 	string email;
 	string age;
-	int daysleft[3];
+	int daysInCourse1;
+	int daysInCourse2;
+	int daysInCourse3;
 	string degreeType;
 
 };

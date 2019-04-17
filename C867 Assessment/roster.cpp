@@ -14,9 +14,9 @@ Roster::Roster() {
 	ParseStudentId(studentData[0]);
 	
 	//create new student object - passing in arguments
-	//SecurityStudent* newStudent = nullptr;
-	//newStudent = new SecurityStudent(studentId);
-
+	SecurityStudent* newStudent = nullptr;
+	newStudent = new SecurityStudent(studentId, firstName, lastName, email, age, daysInCourse1, daysInCourse2, daysInCourse3, SECURITY);
+	newStudent->printData();
 	/*
 	Student roster = nullptr;
 	classRosterArray.at(0) = newStudent;
@@ -26,28 +26,34 @@ Roster::Roster() {
 
 Roster::~Roster() {
 	cout << "deleting classRosterArray" << endl;
-	delete classRosterArray;
+	delete classRosterArray[5];
 }
 
 void Roster::ParseStudentId(string studentData) {
 	stringstream studentSS(studentData);
 	vector<string> studentDataVector;
-
+	//parse string
 	for (int i = 0; i < 9; ++i) {
 		string substr;
 		getline(studentSS, substr, ',');
 		studentDataVector.push_back(substr);
 	}
-	
+	//set to data members
 	studentId   = studentDataVector.at(0);
 	firstName   = studentDataVector.at(1);
 	lastName    = studentDataVector.at(2);
 	email       = studentDataVector.at(3);
 	age         = studentDataVector.at(4);
-	daysleft[0] = stoi(studentDataVector.at(5));
-	daysleft[1] = stoi(studentDataVector.at(6));
-	daysleft[2] = stoi(studentDataVector.at(7));
+	daysInCourse1 = stoi(studentDataVector.at(5));
+	daysInCourse2 = stoi(studentDataVector.at(6));
+	daysInCourse3 = stoi(studentDataVector.at(7));
 	degreeType  = studentDataVector.at(8);
+	return;
+}
+
+void printAll() {
+	
+	return;
 }
 
 int main() {

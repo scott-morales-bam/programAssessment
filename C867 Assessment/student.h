@@ -17,7 +17,7 @@ public:
 	string GetLastName();
 	string GetEmailAddress();
 	string GetStudentAge();
-	int GetDaysCourseComplete();
+	void GetDaysCourseComplete();
 	virtual Degree GetDegreeProgram() = 0; //pure virtual func - set in subclass
 	//2b - Mutators
 	void SetStudentId(string studentId);
@@ -25,7 +25,7 @@ public:
 	void SetLastName(string lastName);
 	void SetEmailAddress(string emailAddress);
 	void SetStudentAge(string studentAge);
-	void SetDaysCourseComplete(int *daysCourseComplete[3]);
+	void SetDaysCourseComplete(int daysCourseComplete[3]);
 	virtual void printData();
 private:
 	string* studentId;
@@ -33,7 +33,7 @@ private:
 	string* lastName;
 	string* emailAddress;
 	string* studentAge;
-	int* daysCourseComplete[3];
+	int daysCourseComplete[3];
 protected:
 	Degree* degreeType; //populated in subclasses
 };

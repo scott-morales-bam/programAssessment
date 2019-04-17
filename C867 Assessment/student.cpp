@@ -6,7 +6,6 @@ Student::Student() {
 	lastName = new string;
 	emailAddress = new string;
 	studentAge = new string;
-	daysCourseComplete[3] = new int;
 }
 
 Student::Student(string studentId, string firstName, string lastName, string emailAddress, string age, int daysInCourse1, int daysInCourse2, int daysInCourse3) {
@@ -20,10 +19,9 @@ Student::Student(string studentId, string firstName, string lastName, string ema
 	*this->emailAddress = emailAddress;
 	 this->studentAge = new string;
 	*this->studentAge = age;
-	 this->daysCourseComplete[3] = new int;
-	*this->daysCourseComplete[0] = daysInCourse1;
-	*this->daysCourseComplete[1] = daysInCourse2;
-	*this->daysCourseComplete[2] = daysInCourse3;
+	this->daysCourseComplete[0] = daysInCourse1;
+	this->daysCourseComplete[1] = daysInCourse2;
+	this->daysCourseComplete[2] = daysInCourse3;
 }
 
 Student::~Student(){
@@ -33,7 +31,6 @@ Student::~Student(){
 	delete lastName;
 	delete emailAddress;
 	delete studentAge;
-	delete daysCourseComplete;
 }
 
 //2a - Accessors
@@ -52,8 +49,9 @@ string Student::GetEmailAddress() {
 string Student::GetStudentAge() {
 	return *studentAge;
 }
-int Student::GetDaysCourseComplete() {
-	return *daysCourseComplete[3];
+void Student::GetDaysCourseComplete() {   //FIX ME!! this is ugly but works
+	cout << "{" << daysCourseComplete[0] << ", " << daysCourseComplete[1] << ", " << daysCourseComplete[2] << "}";
+	return;
 }
 
 //2b - Mutators
@@ -77,15 +75,17 @@ void Student::SetStudentAge(string studentAge) {
 	*this->studentAge = studentAge;
 	return;
 }
-void Student::SetDaysCourseComplete(int *daysCourseComplete[3]) {
+void Student::SetDaysCourseComplete(int daysCourseComplete[3]) {
 	for (int i = 0; i < 3; ++i) {
-		*this->daysCourseComplete[i] = *daysCourseComplete[i];
+		this->daysCourseComplete[i] = daysCourseComplete[i];
 		return;
 	}
 }
 
 void Student::printData(){
-	cout << "Printing Student ID: " << GetStudentId() << endl;
-	cout << "Printing Degree Type: " << GetDegreeProgram() << endl;
+	cout << "1 \t First Name: " << GetFirstName() << "\t Last Name: " << GetLastName();
+	cout << "\t Age: " << GetStudentAge() << "\t daysInCourse: ";
+	GetDaysCourseComplete();//FIX ME!! this is ugly but works
+	cout << " Degree Program: " << GetDegreeProgram() << "." << endl;
 	return;
 }
