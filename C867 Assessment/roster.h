@@ -15,7 +15,6 @@ class Roster {
 public:
 	Roster();
 	~Roster();
-	Roster& operator=(const Roster& objToCopy); //Need this here? or in Student?
 	void SetClassRosterArray();
 	void ParseStudentId(string studentData);
 	//required functions E(3)(a-f)
@@ -26,7 +25,7 @@ public:
 	void printInvalidEmails();
 	void printByDegreeProgram(int degreeProgram);
 private:
-	Student* newStudent;
+	Student Students;
 	int studentCount;
 	string studentId;
 	string firstName;
