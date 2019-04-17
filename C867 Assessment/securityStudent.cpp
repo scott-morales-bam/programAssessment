@@ -12,7 +12,7 @@ SecurityStudent::~SecurityStudent() {
 	delete degreeProgram;
 }
 
-Degree SecurityStudent::GetDegreeProgram(){
+Degree SecurityStudent::PrintDegreeType(){
 	return *degreeType;
 }
 

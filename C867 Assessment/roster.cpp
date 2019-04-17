@@ -10,9 +10,6 @@ Roster::Roster() {
 		"A5,Robert,Morales,rmora46@my.wgu.edu,31,15,31,45,SOFTWARE"
 	};
 
-	//Loop through provided Data Table and create 5 default student objects
-	//for (int i = 0; i < 5; ++i) {
-		//use switch to determine which student object to call?
 	cout << "Created roster" << endl;
 	ParseStudentId(studentData[0]);
 	
@@ -33,7 +30,6 @@ Roster::~Roster() {
 }
 
 void Roster::ParseStudentId(string studentData) {
-	
 	stringstream studentSS(studentData);
 	vector<string> studentDataVector;
 
@@ -43,21 +39,15 @@ void Roster::ParseStudentId(string studentData) {
 		studentDataVector.push_back(substr);
 	}
 	
-	studentId = studentDataVector.at(0);
-	firstName = studentDataVector.at(1);
-	lastName  = studentDataVector.at(2);
-	email     = studentDataVector.at(3);
-	age       = studentDataVector.at(4);
+	studentId   = studentDataVector.at(0);
+	firstName   = studentDataVector.at(1);
+	lastName    = studentDataVector.at(2);
+	email       = studentDataVector.at(3);
+	age         = studentDataVector.at(4);
 	daysleft[0] = stoi(studentDataVector.at(5));
 	daysleft[1] = stoi(studentDataVector.at(6));
 	daysleft[2] = stoi(studentDataVector.at(7));
-	degreeType = studentDataVector.at(8);
-}
-
-void Roster::SetClassRosterArray() {
-	
-	//cout << endl << "printing data: " << studentData[0] << endl;
-	return;
+	degreeType  = studentDataVector.at(8);
 }
 
 int main() {

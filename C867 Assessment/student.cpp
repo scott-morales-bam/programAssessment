@@ -3,88 +3,89 @@
 //2c, 2e - Constructor, Destructor
 Student::Student() {
 	studentId = new string;
-	cout << "new student id created" << endl;
-	//firstName = new string;
-	//lastName = new string;
-	//emailAddress = new string;
-	//studentAge = new int;
-	//daysCourseComplete[3] = new int; //FIXME!! figure out how to Construct init values
-	degreeType = new Degree;
+	firstName = new string;
+	lastName = new string;
+	emailAddress = new string;
+	studentAge = new string;
+	daysCourseComplete[3] = new int;
 
 	return;
 }
 
-Student::Student(string studentId) {
-	this->studentId = new string;
+Student::Student(string studentId, string firstName, string lastName, string emailAddress, string age, int daysInCourse1, int daysInCourse2, int daysInCourse3) {
+	 this->studentId = new string;
 	*this->studentId = studentId;
-	cout << "created student object" << endl;
+	 this->firstName = new string;
+	*this->firstName = firstName;
+	 this->lastName = new string;
+	*this->lastName = lastName;
+	 this->emailAddress = new string;
+	*this->emailAddress = emailAddress;
+	 this->studentAge = new string;
+	*this->studentAge = age;
+	 this->daysCourseComplete[3] = new int;
+	*this->daysCourseComplete[0] = daysInCourse1;
+	*this->daysCourseComplete[1] = daysInCourse2;
+	*this->daysCourseComplete[2] = daysInCourse3;
 }
 
 Student::~Student(){
 	cout << "deleting studentId" << endl;
 	delete studentId;
-	//delete firstName;
-	//delete lastName;
-	//delete emailAddress;
-	//delete studentAge;
-	//delete daysCourseComplete;
-	cout << "deleting degreeType" << endl;
-	delete degreeType; 
+	delete firstName;
+	delete lastName;
+	delete emailAddress;
+	delete studentAge;
+	delete daysCourseComplete;
 }
 
 //2a - Accessors
 string Student::GetStudentId() const {
 	return *studentId;
 }
-//string Student::GetFirstName() const {
-//	return *firstName;
-//}
-//string Student::GetLastName() const {
-//	return *lastName;
-//}
-//string Student::GetEmailAddress() const {
-//	return *emailAddress;
-//}
-//string Student::GetStudentAge() const {
-//	return *studentAge;
-//}
-//int Student::GetDaysCourseComplete() const {
-//	return *daysCourseComplete[0];	//FIX ME!! Will have to iterate through arr
-//}
+string Student::GetFirstName() const {
+	return *firstName;
+}
+string Student::GetLastName() const {
+	return *lastName;
+}
+string Student::GetEmailAddress() const {
+	return *emailAddress;
+}
+string Student::GetStudentAge() const {
+	return *studentAge;
+}
+int Student::GetDaysCourseComplete() const {
+	return *daysCourseComplete[3];
+}
 
 //2b - Mutators
-void Student::SetStudentId(const int studentId) {
+void Student::SetStudentId(string studentId) {
 	*this->studentId = studentId;
-	cout << "student id set to: " << GetStudentId() << endl;
 	return;
 }
-//void Student::SetFirstName(const string firstName) {
-//	*this->firstName = firstName;
-//	return;
-//}
-//void Student::SetLastName(const string lastName) {
-//	*this->lastName = lastName;
-//	return;
-//}
-//void Student::SetEmailAddress(const string emailAddress) {
-//	*this->emailAddress = emailAddress;
-//	return;
-//}
-//void Student::SetStudentAge(const int studentAge) {
-//	*this->studentAge = studentAge;
-//	return;
-//}
-//void Student::SetDaysCourseComplete(const int *daysCourseComplete[], int arrLength) {
-//	for (int i = 0; i < arrLength; ++i) {
-//		*this->daysCourseComplete[i] = *daysCourseComplete[i];
-//		return;
-//	}
-//}
-//void Student::SetDegreeType() { //   ***DONT NEED THIS***
-//	*this->degreeType = deg;
-//	return;
-//}
-
+void Student::SetFirstName(string firstName) {
+	*this->firstName = firstName;
+	return;
+}
+void Student::SetLastName(string lastName) {
+	*this->lastName = lastName;
+	return;
+}
+void Student::SetEmailAddress(string emailAddress) {
+	*this->emailAddress = emailAddress;
+	return;
+}
+void Student::SetStudentAge(string studentAge) {
+	*this->studentAge = studentAge;
+	return;
+}
+void Student::SetDaysCourseComplete(int *daysCourseComplete[3]) {
+	for (int i = 0; i < 3; ++i) {
+		*this->daysCourseComplete[i] = *daysCourseComplete[i];
+		return;
+	}
+}
 
 //2d - print specific student data
 void Student::printData(){
