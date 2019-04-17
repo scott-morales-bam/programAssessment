@@ -14,8 +14,6 @@ using namespace std;
 class Roster {
 public:
 	Roster(int maxSize);
-	~Roster();
-	void SetClassRosterArray();
 	void ParseStudentId(string studentData);
 	//required functions E(3)(a-f)
 	void add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, Degree type);

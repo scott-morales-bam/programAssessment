@@ -18,16 +18,10 @@ Roster::Roster(int maxSize) {
 
 	for (int i = 0; i < maxSize; ++i) {
 		ParseStudentId(studentData[i]);
-		//create new student object - passing in arguments
 		students[i] = new SecurityStudent(studentId, firstName, lastName, email, age, daysInCourse1, daysInCourse2, daysInCourse3, SECURITY);
 		students[i]->printData();
 		++lastIndex;
 	}
-}
-
-Roster::~Roster() {
-	cout << "deleting classRosterArray" << endl;
-	//delete newStudent;
 }
 
 void Roster::ParseStudentId(string studentData) {
