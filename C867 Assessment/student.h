@@ -11,7 +11,7 @@ public:
 	Student();
 	Student(string studentId, string firstName, string lastName, string emailAddress, string age, int daysInCourse1, int daysInCourse2, int daysInCourse3);
 	~Student();
-	Student& operator=(const Student& objToCopy); //FIX ME!! Need this here?
+	//Student& operator=(const Student& objToCopy); //FIX ME!! Need this here?
 	//2a - Accessors
 	string GetStudentId();
 	string GetFirstName();
@@ -29,15 +29,15 @@ public:
 	void SetDaysCourseComplete(int daysCourseComplete[3]);
 	virtual void printData();
 private:
-	string* studentId;
-	string* firstName;
-	string* lastName;
-	string* emailAddress;
-	string* studentAge;
+	string studentId;
+	string firstName;
+	string lastName;
+	string emailAddress;
+	string studentAge;
 	int daysCourseComplete[3];
 	Student* dataObj; //FIX ME!! need this? 
 protected:
-	Degree* degreeType; //populated in subclasses
+	Degree degreeType; //populated in subclasses
 };
 
 #endif

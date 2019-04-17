@@ -10,6 +10,8 @@ using namespace std;
 #include "roster.h"
 #include "student.h"
 #include "securityStudent.h"
+#include "softwareStudent.h"
+#include "networkStudent.h"
 
 class Roster {
 public:

@@ -11,16 +11,30 @@ Roster::Roster(int maxSize) {
 	};
 
 	cout << "Created roster" << endl;
-
 	this->lastIndex = -1;
 	this->maxSize = maxSize;
 	this->students = new Student*[maxSize];
 
 	for (int i = 0; i < maxSize; ++i) {
 		ParseStudentId(studentData[i]);
-		students[i] = new SecurityStudent(studentId, firstName, lastName, email, age, daysInCourse1, daysInCourse2, daysInCourse3, SECURITY);
-		students[i]->printData();
-		++lastIndex;
+		if (degreeType == "SECURITY") {
+			students[i] = new SoftwareStudent(studentId, firstName, lastName, email, age, daysInCourse1, daysInCourse2, daysInCourse3, SECURITY);
+			students[i]->printData();
+			++lastIndex;
+		}
+		else if (degreeType == "NETWORK") {
+			students[i] = new NetworkStudent(studentId, firstName, lastName, email, age, daysInCourse1, daysInCourse2, daysInCourse3, NETWORKING);
+			students[i]->printData();
+			++lastIndex;
+		}
+		else if (degreeType == "SOFTWARE") {
+			students[i] = new SoftwareStudent(studentId, firstName, lastName, email, age, daysInCourse1, daysInCourse2, daysInCourse3, SOFTWARE);
+			students[i]->printData();
+			++lastIndex;
+		}
+		else {
+			cout << "Improper or unassigned degree type" << endl;
+		}
 	}
 }
 

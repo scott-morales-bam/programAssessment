@@ -10,7 +10,7 @@ public:
 	Degree GetDegreeProgram();
 	void SetDegreeType();
 private:
-	Degree* degreeProgram;
+	Degree degreeProgram;
 };
 
 #endif
