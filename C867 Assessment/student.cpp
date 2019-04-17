@@ -31,6 +31,7 @@ Student::~Student(){
 	delete lastName;
 	delete emailAddress;
 	delete studentAge;
+	delete degreeType;
 }
 
 //2a - Accessors
@@ -52,6 +53,9 @@ string Student::GetStudentAge() {
 void Student::GetDaysCourseComplete() {   //FIX ME!! this is ugly but works
 	cout << "{" << daysCourseComplete[0] << ", " << daysCourseComplete[1] << ", " << daysCourseComplete[2] << "}";
 	return;
+}
+Degree Student::GetDegreeProgram() {
+	return *degreeType; 
 }
 
 //2b - Mutators

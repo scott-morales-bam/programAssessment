@@ -18,7 +18,7 @@ public:
 	string GetEmailAddress();
 	string GetStudentAge();
 	void GetDaysCourseComplete();
-	virtual Degree GetDegreeProgram() = 0; //pure virtual func - set in subclass
+	virtual Degree GetDegreeProgram();
 	//2b - Mutators
 	void SetStudentId(string studentId);
 	void SetFirstName(string firstName);
