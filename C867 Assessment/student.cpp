@@ -32,6 +32,17 @@ Student::~Student(){
 	delete emailAddress;
 	delete studentAge;
 	delete degreeType;
+	delete dataObj;
+}
+
+Student& Student::operator=(const Student& objToCopy) {  //FIX ME!! need this copy assignment op?
+	cout << "Assignment op called." << endl;
+	if (this != &objToCopy) {
+		delete dataObj;
+		dataObj = new Student;
+		*dataObj = *(objToCopy.dataObj);
+	}
+	return *this;
 }
 
 //2a - Accessors

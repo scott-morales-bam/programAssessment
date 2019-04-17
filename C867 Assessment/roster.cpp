@@ -11,22 +11,24 @@ Roster::Roster() {
 	};
 
 	cout << "Created roster" << endl;
-	ParseStudentId(studentData[0]);
-	
-	//create new student object - passing in arguments
-	SecurityStudent* newStudent = nullptr;
-	newStudent = new SecurityStudent(studentId, firstName, lastName, email, age, daysInCourse1, daysInCourse2, daysInCourse3, SECURITY);
-	newStudent->printData();
-	/*
-	Student roster = nullptr;
-	classRosterArray.at(0) = newStudent;
-	cout << classRosterArray[0] << "= classRosterArray[0]." << endl;
-	*/
+
+	Student *theClassRoster = new Student[10];
+	this->studentCount = 0;
+
+	for (int i = 0; i < 5; ++i) {
+		ParseStudentId(studentData[i]);
+
+		//create new student object - passing in arguments
+		Student* newStudent = nullptr;
+		newStudent = new SecurityStudent(studentId, firstName, lastName, email, age, daysInCourse1, daysInCourse2, daysInCourse3, SECURITY);
+		newStudent->printData();
+		theClassRoster[i] = newStudent; //FIX ME!!! Copy student obj into array.
+	}
 }
 
 Roster::~Roster() {
 	cout << "deleting classRosterArray" << endl;
-	delete classRosterArray[5];
+	delete newStudent;
 }
 
 void Roster::ParseStudentId(string studentData) {
