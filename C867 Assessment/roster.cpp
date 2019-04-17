@@ -1,6 +1,6 @@
 #include "roster.h"
 
-Roster::Roster() {
+Roster::Roster(int maxSize) {
 	//Provided Data Table
 	const string studentData[] = {
 		"A1,John,Smith,John1989@gm ail.com,20,30,35,40,SECURITY"		,
@@ -12,16 +12,16 @@ Roster::Roster() {
 
 	cout << "Created roster" << endl;
 
-	Student *theClassRoster = new Student[10];
-	this->studentCount = 0;
+	this->lastIndex = -1;
+	this->maxSize = maxSize;
+	this->students = new Student*[maxSize];
 
-	Student **students = new Student*[5];
-
-	for (int i = 0; i < 5; ++i) {
+	for (int i = 0; i < maxSize; ++i) {
 		ParseStudentId(studentData[i]);
 		//create new student object - passing in arguments
 		students[i] = new SecurityStudent(studentId, firstName, lastName, email, age, daysInCourse1, daysInCourse2, daysInCourse3, SECURITY);
 		students[i]->printData();
+		++lastIndex;
 	}
 }
 
@@ -61,7 +61,7 @@ int main() {
 	char exitSign = 'a';
 	
 	Roster* classRoster = nullptr;
-	classRoster = new Roster;
+	classRoster = new Roster(5);
 	
 	while (exitSign != 'q') {
 		

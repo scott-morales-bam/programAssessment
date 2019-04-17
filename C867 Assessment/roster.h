@@ -13,7 +13,7 @@ using namespace std;
 
 class Roster {
 public:
-	Roster();
+	Roster(int maxSize);
 	~Roster();
 	void SetClassRosterArray();
 	void ParseStudentId(string studentData);
@@ -25,8 +25,9 @@ public:
 	void printInvalidEmails();
 	void printByDegreeProgram(int degreeProgram);
 private:
-	Student Students;
-	int studentCount;
+	int lastIndex;
+	int maxSize;
+	Student **students;
 	string studentId;
 	string firstName;
 	string lastName;
