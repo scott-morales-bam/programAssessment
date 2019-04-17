@@ -1,6 +1,5 @@
 #include "student.h"
 
-//2c, 2e - Constructor, Destructor
 Student::Student() {
 	studentId = new string;
 	firstName = new string;
@@ -8,8 +7,6 @@ Student::Student() {
 	emailAddress = new string;
 	studentAge = new string;
 	daysCourseComplete[3] = new int;
-
-	return;
 }
 
 Student::Student(string studentId, string firstName, string lastName, string emailAddress, string age, int daysInCourse1, int daysInCourse2, int daysInCourse3) {
@@ -40,22 +37,22 @@ Student::~Student(){
 }
 
 //2a - Accessors
-string Student::GetStudentId() const {
+string Student::GetStudentId() {
 	return *studentId;
 }
-string Student::GetFirstName() const {
+string Student::GetFirstName() {
 	return *firstName;
 }
-string Student::GetLastName() const {
+string Student::GetLastName() {
 	return *lastName;
 }
-string Student::GetEmailAddress() const {
+string Student::GetEmailAddress() {
 	return *emailAddress;
 }
-string Student::GetStudentAge() const {
+string Student::GetStudentAge() {
 	return *studentAge;
 }
-int Student::GetDaysCourseComplete() const {
+int Student::GetDaysCourseComplete() {
 	return *daysCourseComplete[3];
 }
 
@@ -87,7 +84,6 @@ void Student::SetDaysCourseComplete(int *daysCourseComplete[3]) {
 	}
 }
 
-//2d - print specific student data
 void Student::printData(){
 	cout << "Printing Student ID: " << GetStudentId() << endl;
 	cout << "Printing Degree Type: " << GetDegreeProgram() << endl;

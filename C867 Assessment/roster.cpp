@@ -58,16 +58,7 @@ int main() {
 	
 	while (exitSign != 'q') {
 		
-		//parsing tabledata strings
-		//firstCommaLocation += stringLength + 1;
-		//stringLength = studentData[0].find(',', firstCommaLocation + 1) - firstCommaLocation;
-		//string firstName = studentData[0].substr(firstCommaLocation, stringLength);
-		//firstCommaLocation += stringLength + 1;
-		//stringLength = studentData[0].find(',', firstCommaLocation + 1) - firstCommaLocation;
-		//string lastName = studentData[0].substr(firstCommaLocation, stringLength);
-		//firstCommaLocation += stringLength + 1;
-		//stringLength = studentData[0].find(',', firstCommaLocation + 1) - firstCommaLocation;
-		//string email = studentData[0].substr(firstCommaLocation, stringLength);
+		
 
 
 		cout << "enter 'q' to quit...";

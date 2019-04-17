@@ -8,21 +8,17 @@ using namespace std;
 
 class Student {
 public:
-
-	//2c,2e - Constructor, Destructor
 	Student();
 	Student(string studentId, string firstName, string lastName, string emailAddress, string age, int daysInCourse1, int daysInCourse2, int daysInCourse3);
 	~Student();
-
 	//2a - Accessors
-	string GetStudentId() const;
-	string GetFirstName() const;
-	string GetLastName() const;
-	string GetEmailAddress() const;
-	string GetStudentAge() const;
-	int GetDaysCourseComplete() const;
+	string GetStudentId();
+	string GetFirstName();
+	string GetLastName();
+	string GetEmailAddress();
+	string GetStudentAge();
+	int GetDaysCourseComplete();
 	virtual Degree GetDegreeProgram() = 0; //pure virtual func - set in subclass
-
 	//2b - Mutators
 	void SetStudentId(string studentId);
 	void SetFirstName(string firstName);
@@ -30,8 +26,6 @@ public:
 	void SetEmailAddress(string emailAddress);
 	void SetStudentAge(string studentAge);
 	void SetDaysCourseComplete(int *daysCourseComplete[3]);
-	
-	//2d - print specific student data
 	virtual void printData();
 private:
 	string* studentId;
