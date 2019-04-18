@@ -24,9 +24,10 @@ public:
 	void printAverageDaysInCourse(string studentID);
 	void printInvalidEmails();
 	void printByDegreeProgram(int degreeProgram);
+	int GetMaxSize();
 private:
 	int lastIndex;
-	int maxSize;
+	static int maxSize;
 	Student **students;
 	string studentId;
 	string firstName;

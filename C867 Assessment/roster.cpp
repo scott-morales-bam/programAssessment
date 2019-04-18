@@ -79,22 +79,22 @@ void Roster::printInvalidEmails() {
 }
 
 void Roster::printAverageDaysInCourse(string studentID) {
-	
-	cout << "printing average" << endl;
-	
 	for (int i = 0; i < maxSize; ++i) {
 		if (students[i]->GetStudentId() == studentID) {
 			cout << "student ID: " << students[i]->GetStudentId();
-			cout << "    Name: " << students[i]->GetFirstName();
 			int *tempDays = students[i]->GetDaysInCourse();
 			int avgDays = 0;
 			for (int j = 0; j < 3; ++j) {
 				avgDays += tempDays[j];
 			}
-			cout << "\tAverage: " << avgDays / 3 << endl;
-			delete tempDays;
+			cout << "\tAverage number of days: " << avgDays / 3 << endl;
+			delete[] tempDays;
 		}
 	}
+}
+
+int Roster::GetMaxSize() {
+	return this->maxSize;
 }
 
 int main() {
@@ -106,7 +106,8 @@ int main() {
 
 	//classRoster->printAll();
 	//classRoster->printInvalidEmails();
-	classRoster->printAverageDaysInCourse("A3");
+	for(int i = 0; i < *classRoster.GetMaxSize(); ++i) classRoster->printAverageDaysInCourse("A1");
+	
 	
 	//***How to send arr as argument and return arr as pointer ***
 	/*int days[3] = {10, 20, 30};

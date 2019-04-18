@@ -22,6 +22,6 @@ void NetworkStudent::PrintData() {
 	cout << "\t Age: " << GetStudentAge() << "\t daysInCourse: ";
 	cout << "{" << tempdays[0] << ", " << tempdays[1] << ", " << tempdays[2] << "}";
 	cout << " Degree Program: Network." << endl;
-	delete tempdays;
+	delete[] tempdays;
 	return;
 }
