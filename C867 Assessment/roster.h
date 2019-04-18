@@ -33,9 +33,7 @@ private:
 	string lastName;
 	string email;
 	string age;
-	int daysInCourse1;
-	int daysInCourse2;
-	int daysInCourse3;
+	int* daysInCourse;
 	string degreeType;
 
 };

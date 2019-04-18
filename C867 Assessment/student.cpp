@@ -4,20 +4,22 @@ Student::Student() {
 
 }
 
-Student::Student(string studentId, string firstName, string lastName, string emailAddress, string age, int daysInCourse1, int daysInCourse2, int daysInCourse3) {
+Student::Student(string studentId, string firstName, string lastName, string emailAddress, string age, int daysInCourse[], Degree type) {
 	this->studentId = studentId;
 	this->firstName = firstName;
 	this->lastName = lastName;
 	this->emailAddress = emailAddress;
 	this->studentAge = age;
-	this->daysCourseComplete[0] = daysInCourse1;
-	this->daysCourseComplete[1] = daysInCourse2;
-	this->daysCourseComplete[2] = daysInCourse3;
+	this->daysInCourse = new int[3];
+	cout << daysInCourse[0] << " " << daysInCourse[1] << " " << daysInCourse[2] << endl;
+	for (int i = 0; i < 3; i++) this->daysInCourse[i] = daysInCourse[i];
+	for (int i = 0; i < 3; ++i) cout << this->daysInCourse[i] << ", ";
 }
 
 Student::~Student(){
 	cout << "Destructor called" << endl;
-	delete dataObj;
+	//delete dataObj;	//This throws exception
+	delete daysInCourse;
 }
 
 //Student& Student::operator=(const Student& objToCopy) {  //FIX ME!! need this copy assignment op?
@@ -46,10 +48,9 @@ string Student::GetEmailAddress() {
 string Student::GetStudentAge() {
 	return studentAge;
 }
-void Student::GetDaysCourseComplete() {   //FIX ME!! this is ugly but works
-	cout << "{" << daysCourseComplete[0] << ", " << daysCourseComplete[1] << ", " << daysCourseComplete[2] << "}";
-	return;
-}
+//int* Student::GetDaysInCourse() { 
+	//return daysInCourse[3];
+//}
 Degree Student::GetDegreeProgram() {
 	return degreeType; 
 }
@@ -75,17 +76,15 @@ void Student::SetStudentAge(string studentAge) {
 	this->studentAge = studentAge;
 	return;
 }
-void Student::SetDaysCourseComplete(int daysCourseComplete[3]) {
-	for (int i = 0; i < 3; ++i) {
-		this->daysCourseComplete[i] = daysCourseComplete[i];
-		return;
-	}
-}
+//void Student::SetDaysCourseComplete(int daysInCourse[3]) {
+//	for (int i = 0; i < 3; ++i)	*this->daysInCourse[i] = daysInCourse[i];
+//}
 
-void Student::printData(){
-	cout << "1 \t First Name: " << GetFirstName() << "\t Last Name: " << GetLastName();
-	cout << "\t Age: " << GetStudentAge() << "\t daysInCourse: ";
-	GetDaysCourseComplete();//FIX ME!! this is ugly but works
-	cout << " Degree Program: " << GetDegreeProgram() << "." << endl;
-	return;
-}
+//void Student::printData(){
+//	
+//	cout << "1 \t First Name: " << GetFirstName() << "\t Last Name: " << GetLastName();
+//	cout << "\t Age: " << GetStudentAge() << "\t daysInCourse: ";
+//	cout << "{" << daysCourseComplete[0] << ", " << daysCourseComplete[1] << ", " << daysCourseComplete[2] << "}";
+//	cout << " Degree Program: " << GetDegreeProgram() << "." << endl;
+//	return;
+//}

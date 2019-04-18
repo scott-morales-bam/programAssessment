@@ -14,28 +14,29 @@ Roster::Roster(int maxSize) {
 	this->lastIndex = -1;
 	this->maxSize = maxSize;
 	this->students = new Student*[maxSize];
+	students[0] = new SoftwareStudent(studentId, firstName, lastName, email, age, daysInCourse, SECURITY);
 
-	for (int i = 0; i < maxSize; ++i) {
-		ParseStudentId(studentData[i]);
-		if (degreeType == "SECURITY") {
-			students[i] = new SoftwareStudent(studentId, firstName, lastName, email, age, daysInCourse1, daysInCourse2, daysInCourse3, SECURITY);
-			students[i]->printData();
-			++lastIndex;
-		}
-		else if (degreeType == "NETWORK") {
-			students[i] = new NetworkStudent(studentId, firstName, lastName, email, age, daysInCourse1, daysInCourse2, daysInCourse3, NETWORKING);
-			students[i]->printData();
-			++lastIndex;
-		}
-		else if (degreeType == "SOFTWARE") {
-			students[i] = new SoftwareStudent(studentId, firstName, lastName, email, age, daysInCourse1, daysInCourse2, daysInCourse3, SOFTWARE);
-			students[i]->printData();
-			++lastIndex;
-		}
-		else {
-			cout << "Improper or unassigned degree type" << endl;
-		}
-	}
+	//for (int i = 0; i < maxSize; ++i) {
+	//	ParseStudentId(studentData[i]);
+	//	if (degreeType == "SECURITY") {
+	//		students[i] = new SoftwareStudent(studentId, firstName, lastName, email, age, daysInCourse1, daysInCourse2, daysInCourse3, SECURITY);
+	//		students[i]->printData();
+	//		++lastIndex;
+	//	}
+	//	else if (degreeType == "NETWORK") {
+	//		students[i] = new NetworkStudent(studentId, firstName, lastName, email, age, daysInCourse1, daysInCourse2, daysInCourse3, NETWORKING);
+	//		students[i]->printData();
+	//		++lastIndex;
+	//	}
+	//	else if (degreeType == "SOFTWARE") {
+	//		students[i] = new SoftwareStudent(studentId, firstName, lastName, email, age, daysInCourse1, daysInCourse2, daysInCourse3, SOFTWARE);
+	//		students[i]->printData();
+	//		++lastIndex;
+	//	}
+	//	else {
+	//		cout << "Improper or unassigned degree type" << endl;
+	//	}
+	//}
 }
 
 void Roster::ParseStudentId(string studentData) {
@@ -53,9 +54,11 @@ void Roster::ParseStudentId(string studentData) {
 	lastName    = studentDataVector.at(2);
 	email       = studentDataVector.at(3);
 	age         = studentDataVector.at(4);
-	daysInCourse1 = stoi(studentDataVector.at(5));
-	daysInCourse2 = stoi(studentDataVector.at(6));
-	daysInCourse3 = stoi(studentDataVector.at(7));
+	this->daysInCourse = new int[3];
+	for (int i = 0; i < 3; ++i) this->daysInCourse[i] = stoi(studentDataVector.at(i+5));
+	//daysInCourse1 = stoi(studentDataVector.at(5));
+	//daysInCourse2 = stoi(studentDataVector.at(6));
+	//daysInCourse3 = stoi(studentDataVector.at(7));
 	degreeType  = studentDataVector.at(8);
 	return;
 }
@@ -68,13 +71,13 @@ void printAll() {
 int main() {
 	char exitSign = 'a';
 	
-	Roster* classRoster = nullptr;
-	classRoster = new Roster(5);
+	/*Roster* classRoster = nullptr;
+	classRoster = new Roster(5);*/
+	int days[3] = {10, 20, 30};
+	Student("a1", "bob", "smith", "yahoo@gmail.com", "36", days, SOFTWARE);
 	
 	while (exitSign != 'q') {
 		
-		
-
 
 		cout << "enter 'q' to quit...";
 		cin >> exitSign;

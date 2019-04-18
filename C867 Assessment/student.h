@@ -9,7 +9,7 @@ using namespace std;
 class Student {
 public:
 	Student();
-	Student(string studentId, string firstName, string lastName, string emailAddress, string age, int daysInCourse1, int daysInCourse2, int daysInCourse3);
+	Student(string studentId, string firstName, string lastName, string emailAddress, string age, int daysInCourse[], Degree type);
 	~Student();
 	//Student& operator=(const Student& objToCopy); //FIX ME!! Need this here?
 	//2a - Accessors
@@ -18,7 +18,7 @@ public:
 	string GetLastName();
 	string GetEmailAddress();
 	string GetStudentAge();
-	void GetDaysCourseComplete();
+	//int* GetDaysInCourse();
 	virtual Degree GetDegreeProgram();
 	//2b - Mutators
 	void SetStudentId(string studentId);
@@ -27,15 +27,15 @@ public:
 	void SetEmailAddress(string emailAddress);
 	void SetStudentAge(string studentAge);
 	void SetDaysCourseComplete(int daysCourseComplete[3]);
-	virtual void printData();
+	//virtual void printData();
 private:
 	string studentId;
 	string firstName;
 	string lastName;
 	string emailAddress;
 	string studentAge;
-	int daysCourseComplete[3];
-	Student* dataObj; //FIX ME!! need this? 
+	int *daysInCourse;
+	Student *dataObj; //FIX ME!! need this? 
 protected:
 	Degree degreeType; //populated in subclasses
 };
