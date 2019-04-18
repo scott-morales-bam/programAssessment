@@ -59,12 +59,19 @@ void Roster::ParseStudentId(string studentData) {
 	return;
 }
 
+void add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, Degree type) {
+	//something
+}
+
 void printAll() {
 	
 	return;
 }
 
 int main() {
+	//Print out to the screen, via your application, the course title, the programming language used, your student ID, and your name.
+	cout << "C867 Scripting and Programming\t C++    #000954923   Robert Morales" << endl << endl;
+	
 	char exitSign = 'a';
 	
 	Roster* classRoster = nullptr;
