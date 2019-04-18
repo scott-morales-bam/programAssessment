@@ -74,8 +74,11 @@ int main() {
 	/*Roster* classRoster = nullptr;
 	classRoster = new Roster(5);*/
 	int days[3] = {10, 20, 30};
-	Student("a1", "bob", "smith", "yahoo@gmail.com", "36", days, SOFTWARE);
-	
+	Student poopMan = Student("a1", "bob", "smith", "yahoo@gmail.com", "36", days, SOFTWARE);
+	int *tempdays; tempdays = poopMan.GetDaysInCourse();
+	cout << poopMan.GetFirstName() << endl;
+	for(int i = 0; i < 3; ++i) cout << tempdays[i] << endl;
+
 	while (exitSign != 'q') {
 		
 
