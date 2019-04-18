@@ -84,8 +84,15 @@ void Roster::printAverageDaysInCourse(string studentID) {
 	
 	for (int i = 0; i < maxSize; ++i) {
 		if (students[i]->GetStudentId() == studentID) {
-			cout << "student ID: " << students[i]->GetStudentId() << endl;
-			cout << "Name: " << students[i]->GetFirstName() << endl;
+			cout << "student ID: " << students[i]->GetStudentId();
+			cout << "    Name: " << students[i]->GetFirstName();
+			int *tempDays = students[i]->GetDaysInCourse();
+			int avgDays = 0;
+			for (int j = 0; j < 3; ++j) {
+				avgDays += tempDays[j];
+			}
+			cout << "\tAverage: " << avgDays / 3 << endl;
+			delete tempDays;
 		}
 	}
 }
