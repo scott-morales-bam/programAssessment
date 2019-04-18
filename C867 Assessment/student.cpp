@@ -78,11 +78,12 @@ void Student::SetDaysCourseComplete(int daysInCourse[]) {
 	for (int i = 0; i < 3; i++) this->daysInCourse[i] = daysInCourse[i];
 }
 
-//void Student::printData(){
-//	
-//	cout << "1 \t First Name: " << GetFirstName() << "\t Last Name: " << GetLastName();
-//	cout << "\t Age: " << GetStudentAge() << "\t daysInCourse: ";
-//	cout << "{" << daysCourseComplete[0] << ", " << daysCourseComplete[1] << ", " << daysCourseComplete[2] << "}";
-//	cout << " Degree Program: " << GetDegreeProgram() << "." << endl;
-//	return;
-//}
+void Student::printData(){
+	int *tempdays = GetDaysInCourse(); //temp holder for daysInCourse
+	cout << "1 \t First Name: " << GetFirstName() << "\t Last Name: " << GetLastName();
+	cout << "\t Age: " << GetStudentAge() << "\t daysInCourse: ";
+	cout << "{" << tempdays[0] << ", " << tempdays[1] << ", " << tempdays[2] << "}";
+	cout << " Degree Program: " << GetDegreeProgram() << "." << endl;
+	delete tempdays;
+	return;
+}

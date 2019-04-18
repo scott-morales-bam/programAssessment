@@ -1,6 +1,7 @@
 #include "securityStudent.h"
 
-SecurityStudent::SecurityStudent(string studentId, string firstName, string lastName, string emailAddress, string age, int daysInCourse[], Degree type) {
+SecurityStudent::SecurityStudent(string studentId, string firstName, string lastName, string emailAddress, string age, int daysInCourse[], Degree type) 
+	: Student(studentId, firstName, lastName, emailAddress, age, daysInCourse, type) {
 	//degreeProgram = new Degree;
 	degreeProgram = type;
 	degreeType = degreeProgram;

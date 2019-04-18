@@ -1,6 +1,7 @@
 #include "networkStudent.h"
 
-NetworkStudent::NetworkStudent(string studentId, string firstName, string lastName, string emailAddress, string age, int daysInCourse[], Degree type) {
+NetworkStudent::NetworkStudent(string studentId, string firstName, string lastName, string emailAddress, string age, int daysInCourse[], Degree type) 
+	: Student(studentId, firstName, lastName, emailAddress, age, daysInCourse, type) {
 	//degreeProgram = new Degree;
 	degreeProgram = type;
 	degreeType = degreeProgram;
