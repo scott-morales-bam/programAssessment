@@ -78,6 +78,18 @@ void Roster::printInvalidEmails() {
 	return;
 }
 
+void Roster::printAverageDaysInCourse(string studentID) {
+	
+	cout << "printing average" << endl;
+	
+	for (int i = 0; i < maxSize; ++i) {
+		if (students[i]->GetStudentId() == studentID) {
+			cout << "student ID: " << students[i]->GetStudentId() << endl;
+			cout << "Name: " << students[i]->GetFirstName() << endl;
+		}
+	}
+}
+
 int main() {
 	//Print out to the screen, via your application, the course title, the programming language used, your student ID, and your name.
 	cout << "C867 Scripting and Programming\t C++    #000954923   Robert Morales" << endl << endl;
@@ -85,8 +97,9 @@ int main() {
 	Roster* classRoster = nullptr; 
 	classRoster = new Roster(5);   //create classRoster, add each student to classRoster
 
-	classRoster->printAll();
-	classRoster->printInvalidEmails();
+	//classRoster->printAll();
+	//classRoster->printInvalidEmails();
+	classRoster->printAverageDaysInCourse("A3");
 	
 	//***How to send arr as argument and return arr as pointer ***
 	/*int days[3] = {10, 20, 30};
