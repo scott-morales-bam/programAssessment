@@ -10,7 +10,7 @@ Roster::Roster(int maxSize) {
 		"A5,Robert,Morales,rmora46@my.wgu.edu,31,15,31,45,SOFTWARE"
 	};
 
-	cout << "Created roster" << endl;
+	cout << "Created roster \n" << endl;
 	this->lastIndex = -1;
 	this->maxSize = maxSize;
 	this->students = new Student*[maxSize]; // create new pointer array to hold student objects
@@ -88,25 +88,30 @@ void Roster::printAverageDaysInCourse(string studentID) {
 				avgDays += tempDays[j];
 			}
 			cout << "\tAverage number of days: " << avgDays / 3 << endl;
-			delete[] tempDays;
+			break;
 		}
 	}
 }
 
-int Roster::GetMaxSize() {
-	return this->maxSize;
-}
 
 int main() {
+	int maxSize = 5;
+	
 	//Print out to the screen, via your application, the course title, the programming language used, your student ID, and your name.
 	cout << "C867 Scripting and Programming\t C++    #000954923   Robert Morales" << endl << endl;
 	
 	Roster* classRoster = nullptr; 
-	classRoster = new Roster(5);   //create classRoster, add each student to classRoster
+	classRoster = new Roster(maxSize);   //create classRoster, add each student to classRoster
 
 	//classRoster->printAll();
 	//classRoster->printInvalidEmails();
-	for(int i = 0; i < *classRoster.GetMaxSize(); ++i) classRoster->printAverageDaysInCourse("A1");
+	//classRoster->printAverageDaysInCourse("A4");
+	
+	for (int i = 0; i < maxSize; ++i) {
+		ostringstream idOSS;
+		idOSS << "A" << i+1;
+		classRoster->printAverageDaysInCourse(idOSS.str());
+	}
 	
 	
 	//***How to send arr as argument and return arr as pointer ***
