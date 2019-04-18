@@ -71,7 +71,8 @@ void Roster::printInvalidEmails() {
 	for (int i = 0; i < maxSize; ++i) {
 		string email = students[i]->GetEmailAddress();
 		int positionAtSign = email.find('@');
-		if(positionAtSign < 1) cout << "\t" << email << endl << endl;
+		int periodAfterAtSign = email.find('.', positionAtSign);
+		if (periodAfterAtSign == -1) cout << "\t" << email << endl;
 	}
 }
 
