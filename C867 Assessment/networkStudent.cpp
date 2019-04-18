@@ -17,6 +17,12 @@ Degree NetworkStudent::GetDegreeProgram() {
 	return degreeProgram;
 }
 
-void NetworkStudent::SetDegreeType() {
-	degreeType = degreeProgram;
+void NetworkStudent::PrintData() {
+	int *tempdays = GetDaysInCourse(); //temp holder for daysInCourse
+	cout << "1 \t First Name: " << GetFirstName() << "\t Last Name: " << GetLastName();
+	cout << "\t Age: " << GetStudentAge() << "\t daysInCourse: ";
+	cout << "{" << tempdays[0] << ", " << tempdays[1] << ", " << tempdays[2] << "}";
+	cout << " Degree Program: Network." << endl;
+	delete tempdays;
+	return;
 }

@@ -14,23 +14,22 @@ Roster::Roster(int maxSize) {
 	this->lastIndex = -1;
 	this->maxSize = maxSize;
 	this->students = new Student*[maxSize]; // create new pointer array to hold student objects
-	//students[0] = new SoftwareStudent(studentId, firstName, lastName, email, age, daysInCourse, SECURITY); //what the heck is this???
 
 	for (int i = 0; i < maxSize; ++i) {
 		ParseStudentId(studentData[i]);
 		if (degreeType == "SECURITY") {
-			students[i] = new SoftwareStudent(studentId, firstName, lastName, email, age, daysInCourse, SECURITY);
-			students[i]->printData();
+			students[i] = new SecurityStudent(studentId, firstName, lastName, email, age, daysInCourse, SECURITY);
+			students[i]->PrintData();
 			++lastIndex;
 		}
 		else if (degreeType == "NETWORK") {
 			students[i] = new NetworkStudent(studentId, firstName, lastName, email, age, daysInCourse, NETWORKING);
-			students[i]->printData();
+			students[i]->PrintData();
 			++lastIndex;
 		}
 		else if (degreeType == "SOFTWARE") {
 			students[i] = new SoftwareStudent(studentId, firstName, lastName, email, age, daysInCourse, SOFTWARE);
-			students[i]->printData();
+			students[i]->PrintData();
 			++lastIndex;
 		}
 		else {

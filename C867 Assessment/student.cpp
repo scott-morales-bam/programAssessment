@@ -78,7 +78,7 @@ void Student::SetDaysCourseComplete(int daysInCourse[]) {
 	for (int i = 0; i < 3; i++) this->daysInCourse[i] = daysInCourse[i];
 }
 
-void Student::printData(){
+void Student::PrintData(){
 	int *tempdays = GetDaysInCourse(); //temp holder for daysInCourse
 	cout << "1 \t First Name: " << GetFirstName() << "\t Last Name: " << GetLastName();
 	cout << "\t Age: " << GetStudentAge() << "\t daysInCourse: ";

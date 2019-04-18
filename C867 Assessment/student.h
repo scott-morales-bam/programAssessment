@@ -27,7 +27,7 @@ public:
 	void SetEmailAddress(string emailAddress);
 	void SetStudentAge(string studentAge);
 	void SetDaysCourseComplete(int daysInCourse[]);
-	virtual void printData();
+	virtual void PrintData();
 private:
 	string studentId;
 	string firstName;

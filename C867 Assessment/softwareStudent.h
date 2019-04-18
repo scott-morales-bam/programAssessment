@@ -8,7 +8,7 @@ public:
 	SoftwareStudent(string studentId, string firstName, string lastName, string emailAddress, string age, int daysInCourse[], Degree type);
 	~SoftwareStudent();
 	Degree GetDegreeProgram();
-	void SetDegreeType();
+	void PrintData();
 private:
 	Degree degreeProgram;
 };

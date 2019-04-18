@@ -8,7 +8,7 @@ public:
 	NetworkStudent(string studentId, string firstName, string lastName, string emailAddress, string age, int daysInCourse[], Degree type);
 	~NetworkStudent();
 	Degree GetDegreeProgram();
-	void SetDegreeType();
+	void PrintData();
 private:
 	Degree degreeProgram;
 };
