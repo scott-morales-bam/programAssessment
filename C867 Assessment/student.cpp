@@ -11,9 +11,7 @@ Student::Student(string studentId, string firstName, string lastName, string ema
 	this->emailAddress = emailAddress;
 	this->studentAge = age;
 	this->daysInCourse = new int[3];
-	cout << daysInCourse[0] << " " << daysInCourse[1] << " " << daysInCourse[2] << endl;
 	for (int i = 0; i < 3; i++) this->daysInCourse[i] = daysInCourse[i];
-	for (int i = 0; i < 3; ++i) cout << this->daysInCourse[i] << ", ";
 }
 
 Student::~Student(){
@@ -48,9 +46,9 @@ string Student::GetEmailAddress() {
 string Student::GetStudentAge() {
 	return studentAge;
 }
-//int* Student::GetDaysInCourse() { 
-	//return daysInCourse[3];
-//}
+int* Student::GetDaysInCourse() { 
+	return daysInCourse;
+}
 Degree Student::GetDegreeProgram() {
 	return degreeType; 
 }
@@ -76,9 +74,9 @@ void Student::SetStudentAge(string studentAge) {
 	this->studentAge = studentAge;
 	return;
 }
-//void Student::SetDaysCourseComplete(int daysInCourse[3]) {
-//	for (int i = 0; i < 3; ++i)	*this->daysInCourse[i] = daysInCourse[i];
-//}
+void Student::SetDaysCourseComplete(int daysInCourse[]) {
+	for (int i = 0; i < 3; i++) this->daysInCourse[i] = daysInCourse[i];
+}
 
 //void Student::printData(){
 //	

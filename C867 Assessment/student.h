@@ -18,7 +18,7 @@ public:
 	string GetLastName();
 	string GetEmailAddress();
 	string GetStudentAge();
-	//int* GetDaysInCourse();
+	int* GetDaysInCourse();
 	virtual Degree GetDegreeProgram();
 	//2b - Mutators
 	void SetStudentId(string studentId);
@@ -26,7 +26,7 @@ public:
 	void SetLastName(string lastName);
 	void SetEmailAddress(string emailAddress);
 	void SetStudentAge(string studentAge);
-	void SetDaysCourseComplete(int daysCourseComplete[3]);
+	void SetDaysCourseComplete(int daysInCourse[]);
 	//virtual void printData();
 private:
 	string studentId;
