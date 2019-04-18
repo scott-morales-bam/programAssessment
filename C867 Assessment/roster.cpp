@@ -19,17 +19,14 @@ Roster::Roster(int maxSize) {
 		ParseStudentId(studentData[i]);
 		if (degreeType == "SECURITY") {
 			students[i] = new SecurityStudent(studentId, firstName, lastName, email, age, daysInCourse, SECURITY);
-			//students[i]->PrintData();
 			++lastIndex;
 		}
 		else if (degreeType == "NETWORK") {
 			students[i] = new NetworkStudent(studentId, firstName, lastName, email, age, daysInCourse, NETWORKING);
-			//students[i]->PrintData();
 			++lastIndex;
 		}
 		else if (degreeType == "SOFTWARE") {
 			students[i] = new SoftwareStudent(studentId, firstName, lastName, email, age, daysInCourse, SOFTWARE);
-			//students[i]->PrintData();
 			++lastIndex;
 		}
 		else {
@@ -59,13 +56,23 @@ void Roster::ParseStudentId(string studentData) {
 	return;
 }
 
-void Roster::add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, Degree type) {
-	//something
-}
+//void Roster::add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, Degree type) {
+//	cout << "Add Student" << endl;
+//
+//}
 
 void Roster::printAll() {
 	for(int i = 0; i < maxSize; ++i) students[i]->PrintData();
-	return;
+	return; //FIX ME!! doesn't print the correct student ID *****************
+}
+
+void Roster::printInvalidEmails() {
+	cout << "\nPrint invalid emails: \n" << endl;
+	for (int i = 0; i < maxSize; ++i) {
+		string email = students[i]->GetEmailAddress();
+		int positionAtSign = email.find('@');
+		if(positionAtSign < 1) cout << "\t" << email << endl << endl;
+	}
 }
 
 int main() {
@@ -76,6 +83,7 @@ int main() {
 	classRoster = new Roster(5);   //create classRoster, add each student to classRoster
 
 	classRoster->printAll();
+	classRoster->printInvalidEmails();
 	
 	//***How to send arr as argument and return arr as pointer ***
 	/*int days[3] = {10, 20, 30};
