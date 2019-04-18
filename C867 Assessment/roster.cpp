@@ -19,17 +19,17 @@ Roster::Roster(int maxSize) {
 		ParseStudentId(studentData[i]);
 		if (degreeType == "SECURITY") {
 			students[i] = new SecurityStudent(studentId, firstName, lastName, email, age, daysInCourse, SECURITY);
-			students[i]->PrintData();
+			//students[i]->PrintData();
 			++lastIndex;
 		}
 		else if (degreeType == "NETWORK") {
 			students[i] = new NetworkStudent(studentId, firstName, lastName, email, age, daysInCourse, NETWORKING);
-			students[i]->PrintData();
+			//students[i]->PrintData();
 			++lastIndex;
 		}
 		else if (degreeType == "SOFTWARE") {
 			students[i] = new SoftwareStudent(studentId, firstName, lastName, email, age, daysInCourse, SOFTWARE);
-			students[i]->PrintData();
+			//students[i]->PrintData();
 			++lastIndex;
 		}
 		else {
@@ -59,12 +59,12 @@ void Roster::ParseStudentId(string studentData) {
 	return;
 }
 
-void add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, Degree type) {
+void Roster::add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, Degree type) {
 	//something
 }
 
-void printAll() {
-	
+void Roster::printAll() {
+	for(int i = 0; i < maxSize; ++i) students[i]->PrintData();
 	return;
 }
 
@@ -72,10 +72,10 @@ int main() {
 	//Print out to the screen, via your application, the course title, the programming language used, your student ID, and your name.
 	cout << "C867 Scripting and Programming\t C++    #000954923   Robert Morales" << endl << endl;
 	
-	char exitSign = 'a';
-	
-	Roster* classRoster = nullptr;
-	classRoster = new Roster(5);
+	Roster* classRoster = nullptr; 
+	classRoster = new Roster(5);   //create classRoster, add each student to classRoster
+
+	classRoster->printAll();
 	
 	//***How to send arr as argument and return arr as pointer ***
 	/*int days[3] = {10, 20, 30};
@@ -84,7 +84,7 @@ int main() {
 	cout << poopMan.GetFirstName() << endl;
 	for(int i = 0; i < 3; ++i) cout << tempdays[i] << endl;*/
 	
-
+	char exitSign = 'a';
 	while (exitSign != 'q') {
 		
 
