@@ -62,8 +62,11 @@ void Roster::ParseStudentId(string studentData) {
 //}
 
 void Roster::printAll() {
-	for(int i = 0; i < maxSize; ++i) students[i]->PrintData();
-	return; //FIX ME!! doesn't print the correct student ID *****************
+	for (int i = 0; i < maxSize; ++i) {
+		cout << i + 1 << "   ";
+		students[i]->PrintData();
+	}
+	return;
 }
 
 void Roster::printInvalidEmails() {
@@ -75,6 +78,7 @@ void Roster::printInvalidEmails() {
 		if (periodAfterAtSign == -1) cout << "\t" << email << endl;
 		else if(email.find(' ') != -1) cout << "\t" << email << endl;
 	}
+	cout << endl;
 	return;
 }
 
@@ -103,8 +107,8 @@ int main() {
 	Roster* classRoster = nullptr; 
 	classRoster = new Roster(maxSize);   //create classRoster, add each student to classRoster
 
-	//classRoster->printAll();
-	//classRoster->printInvalidEmails();
+	classRoster->printAll();
+	classRoster->printInvalidEmails();
 	//classRoster->printAverageDaysInCourse("A4");
 	
 	for (int i = 0; i < maxSize; ++i) {
@@ -125,7 +129,7 @@ int main() {
 	while (exitSign != 'q') {
 		
 
-		cout << "enter 'q' to quit...";
+		cout << "\nenter 'q' to quit...";
 		cin >> exitSign;
 		cout << endl << endl;
 	}

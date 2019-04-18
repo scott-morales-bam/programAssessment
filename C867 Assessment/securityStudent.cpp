@@ -18,10 +18,10 @@ Degree SecurityStudent::GetDegreeProgram(){
 
 void SecurityStudent::PrintData() {
 	int *tempdays = GetDaysInCourse(); //temp holder for daysInCourse
-	cout << "1 \t First Name: " << GetFirstName() << "\t Last Name: " << GetLastName();
+	cout << "First Name: " << GetFirstName() << "\tLast Name: " << GetLastName();
 	cout << "\t Age: " << GetStudentAge() << "\t daysInCourse: ";
 	cout << "{" << tempdays[0] << ", " << tempdays[1] << ", " << tempdays[2] << "}";
 	cout << " Degree Program: Security." << endl;
-	delete[] tempdays;
+	//delete[] tempdays;
 	return;
 }
