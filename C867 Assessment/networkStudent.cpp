@@ -9,7 +9,6 @@ NetworkStudent::NetworkStudent(string studentId, string firstName, string lastNa
 
 NetworkStudent::~NetworkStudent() {
 	cout << "NetworkStudent destructor called" << endl;
-	//delete degreeProgram;
 }
 
 Degree NetworkStudent::GetDegreeProgram() {

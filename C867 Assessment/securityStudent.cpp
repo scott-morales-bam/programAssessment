@@ -9,7 +9,6 @@ SecurityStudent::SecurityStudent(string studentId, string firstName, string last
 
 SecurityStudent::~SecurityStudent() {
 	cout << "Security Student destructor called" << endl;
-	//delete degreeProgram;
 }
 
 Degree SecurityStudent::GetDegreeProgram(){

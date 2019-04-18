@@ -9,7 +9,6 @@ SoftwareStudent::SoftwareStudent(string studentId, string firstName, string last
 
 SoftwareStudent::~SoftwareStudent() {
 	cout << "SoftwareStudent destructor called" << endl;
-	//delete degreeProgram;
 }
 
 Degree SoftwareStudent::GetDegreeProgram() {

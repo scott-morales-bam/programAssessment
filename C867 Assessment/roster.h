@@ -16,6 +16,8 @@ using namespace std;
 class Roster {
 public:
 	Roster(int maxSize);
+	~Roster();
+	Roster& operator=(const Roster& oldRoster); //FIX ME!! Need this here?
 	void ParseStudentId(string studentData);
 	//required functions E(3)(a-f)
 	void add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, Degree type);
@@ -33,7 +35,7 @@ private:
 	string lastName;
 	string email;
 	string age;
-	int* daysInCourse;
+	int *daysInCourse;
 	string degreeType;
 
 };

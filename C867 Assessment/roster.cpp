@@ -34,6 +34,21 @@ Roster::Roster(int maxSize) {
 	}
 }
 
+Roster::~Roster() {
+	cout << "Roster destructor called" << endl;
+	delete[] students;
+}
+
+Roster& Roster::operator=(const Roster& oldRoster) {  //FIX ME!! need this copy assignment op?
+	cout << "Assignment op called." << endl;
+	if (this != &oldRoster) {
+		delete[] students;
+		students = new Student*[maxSize];
+		*students = *(oldRoster.students);
+	}
+	return *this;
+}
+
 void Roster::ParseStudentId(string studentData) {
 	stringstream studentSS(studentData);
 	vector<string> studentDataVector;
@@ -55,10 +70,34 @@ void Roster::ParseStudentId(string studentData) {
 	return;
 }
 
-//void Roster::add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, Degree type) {
-//	cout << "Add Student" << endl;
-//
-//}
+void Roster::add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, Degree type) {
+	this->daysInCourse = new int[3];
+	this->daysInCourse[0] = daysInCourse1;
+	this->daysInCourse[1] = daysInCourse2;
+	this->daysInCourse[2] = daysInCourse3;
+	this->age = to_string(age);
+	
+	if (type == SECURITY) {
+		students[lastIndex + 1] = new SecurityStudent(studentID, firstName, lastName, emailAddress, this->age, daysInCourse, SECURITY);
+		++lastIndex;
+	}
+	else if (type == NETWORKING) {
+		students[lastIndex + 1] = new NetworkStudent(studentID, firstName, lastName, emailAddress, this->age, daysInCourse, NETWORKING);
+		++lastIndex;
+	}
+	else if (type == SOFTWARE) {
+		students[lastIndex + 1] = new SoftwareStudent(studentID, firstName, lastName, emailAddress, this->age, daysInCourse, SOFTWARE);
+		++lastIndex;
+	}
+	else {
+		cout << "Improper or unassigned degree type" << endl;
+	}
+	return;
+}
+
+void Roster::remove(string studentID) {
+	return;
+}
 
 void Roster::printAll() {
 	for (int i = 0; i < maxSize; ++i) {
@@ -113,8 +152,7 @@ int main() {
 	
 	cout << "C867 Scripting and Programming\t C++    #000954923   Robert Morales" << endl << endl;
 	
-	Roster* classRoster = nullptr; 
-	classRoster = new Roster(maxSize);   //create classRoster, add each student to classRoster
+	Roster* classRoster = new Roster(maxSize);   //create classRoster, add each student to classRoster
 
 	classRoster->printAll();
 
