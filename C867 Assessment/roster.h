@@ -23,7 +23,7 @@ public:
 	void printAll();
 	void printAverageDaysInCourse(string studentID);
 	void printInvalidEmails();
-	void printByDegreeProgram(int degreeProgram);
+	void printByDegreeProgram(Degree degreeProgram);
 private:
 	int lastIndex;
 	int maxSize;

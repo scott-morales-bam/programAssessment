@@ -97,6 +97,17 @@ void Roster::printAverageDaysInCourse(string studentID) {
 	}
 }
 
+void Roster::printByDegreeProgram(Degree degreeProgram) {
+	int numberMatches = 0;
+	for (int i = 0; i < maxSize; ++i) {
+		if (students[i]->GetDegreeProgram() == degreeProgram) {
+			++numberMatches;
+			cout << numberMatches << "   ";
+			students[i]->PrintData();
+		}
+	}
+	return;
+}
 
 int main() {
 	int maxSize = 5;
@@ -107,15 +118,18 @@ int main() {
 	Roster* classRoster = nullptr; 
 	classRoster = new Roster(maxSize);   //create classRoster, add each student to classRoster
 
-	classRoster->printAll();
-	classRoster->printInvalidEmails();
-	//classRoster->printAverageDaysInCourse("A4");
-	
-	for (int i = 0; i < maxSize; ++i) {
-		ostringstream idOSS;
-		idOSS << "A" << i+1;
-		classRoster->printAverageDaysInCourse(idOSS.str());
-	}
+//	classRoster->printAll();
+
+//	classRoster->printInvalidEmails();
+
+	//classRoster->printAverageDaysInCourse("A4"); //This works to call single student's avgDays
+//	for (int i = 0; i < maxSize; ++i) { //loop through all students and print avgDays
+//		ostringstream idOSS;
+//		idOSS << "A" << i+1;
+//		classRoster->printAverageDaysInCourse(idOSS.str()); 
+//	}
+
+	classRoster->printByDegreeProgram(SOFTWARE);
 	
 	
 	//***How to send arr as argument and return arr as pointer ***
