@@ -11,7 +11,6 @@ public:
 	Student();
 	Student(string studentId, string firstName, string lastName, string emailAddress, string age, int daysInCourse[], Degree type);
 	~Student();
-	//Student& operator=(const Student& objToCopy); //FIX ME!! Need this here?
 	//2a - Accessors
 	string GetStudentId();
 	string GetFirstName();

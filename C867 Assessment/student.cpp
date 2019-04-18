@@ -17,18 +17,8 @@ Student::Student(string studentId, string firstName, string lastName, string ema
 Student::~Student(){
 	cout << "Destructor called" << endl;
 	//delete dataObj;	//This throws exception
-	delete daysInCourse;
+	delete[] daysInCourse;
 }
-
-//Student& Student::operator=(const Student& objToCopy) {  //FIX ME!! need this copy assignment op?
-//	cout << "Assignment op called." << endl;
-//	if (this != &objToCopy) {
-//		delete dataObj;
-//		dataObj = new Student;
-//		*dataObj = *(objToCopy.dataObj);
-//	}
-//	return *this;
-//}
 
 //2a - Accessors
 string Student::GetStudentId() {
