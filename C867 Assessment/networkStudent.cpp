@@ -5,7 +5,6 @@ NetworkStudent::NetworkStudent(string studentId, string firstName, string lastNa
 	//degreeProgram = new Degree;
 	degreeProgram = type;
 	degreeType = degreeProgram;
-	cout << "created NetworkStudent  object" << endl;
 }
 
 NetworkStudent::~NetworkStudent() {

@@ -5,7 +5,6 @@ SecurityStudent::SecurityStudent(string studentId, string firstName, string last
 	//degreeProgram = new Degree;
 	degreeProgram = type;
 	degreeType = degreeProgram;
-	cout << "created securityStudent object" << endl;
 }
 
 SecurityStudent::~SecurityStudent() {

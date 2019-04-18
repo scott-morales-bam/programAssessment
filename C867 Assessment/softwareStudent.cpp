@@ -5,7 +5,6 @@ SoftwareStudent::SoftwareStudent(string studentId, string firstName, string last
 	//degreeProgram = new Degree;
 	degreeProgram = type;
 	degreeType = degreeProgram;
-	cout << "created SoftwareStudent object" << endl;
 }
 
 SoftwareStudent::~SoftwareStudent() {
