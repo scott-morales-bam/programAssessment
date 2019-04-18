@@ -73,7 +73,9 @@ void Roster::printInvalidEmails() {
 		int positionAtSign = email.find('@');
 		int periodAfterAtSign = email.find('.', positionAtSign);
 		if (periodAfterAtSign == -1) cout << "\t" << email << endl;
+		else if(email.find(' ') != -1) cout << "\t" << email << endl;
 	}
+	return;
 }
 
 int main() {
