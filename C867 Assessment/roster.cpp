@@ -40,14 +40,24 @@ Roster::~Roster() {
 	delete[] students;
 }
 
-Roster& Roster::operator=(const Roster& oldRoster) {  //FIX ME!! need this copy assignment op?
-	cout << "Assignment op called." << endl;
-	if (this != &oldRoster) {
-		delete[] students;
-		students = new Student*[maxSize];
-		*students = *(oldRoster.students);
+Roster::Roster(const Roster& oldRoster) {
+	cout << "Copy constructor called" << endl;
+	students = new Student*[maxSize];
+	for (int i = 0; i < maxSize; ++i) {
+		*students[i] = *(oldRoster.students[i]);
 	}
+}
+
+Roster& Roster::operator=(Roster oldRoster) {
+	cout << "Assignment op called." << endl;
+	swap(*this, oldRoster);
 	return *this;
+}
+
+void swap(Roster& first, Roster& second) {
+	cout << "Swap called";
+	using std::swap;
+	swap(first.students, second.students);
 }
 
 void Roster::ParseStudentId(string studentData) {
@@ -78,6 +88,13 @@ void Roster::add(string studentID, string firstName, string lastName, string ema
 	this->daysInCourse[2] = daysInCourse3;
 	this->age = to_string(age);
 	
+
+	//tempStudents = new Student*[maxSize];
+	tempStudents(students);
+	delete[] students;
+	students = new Student*[++maxSize];
+	students = tempStudents;
+
 	if (type == SECURITY) {
 		students[lastIndex + 1] = new SecurityStudent(studentID, firstName, lastName, emailAddress, this->age, daysInCourse, SECURITY);
 		++lastIndex;
@@ -155,17 +172,20 @@ int main() {
 	
 	Roster* classRoster = new Roster(maxSize);   //create classRoster, add each student to classRoster
 
+	//classRoster->printAll();
+
+	//classRoster->printInvalidEmails();
+
+	//for (int i = 0; i < maxSize; ++i) { //loop through printAverageDaysInCourse("A1")
+	//	ostringstream idOSS;
+	//	idOSS << "A" << i+1;
+	//	classRoster->printAverageDaysInCourse(idOSS.str()); 
+	//}
+
+	//classRoster->printByDegreeProgram(SOFTWARE);
+
+	classRoster->add("A6", "Bob", "Stevens", "bobsteven.com", 34, 10, 20, 30, SECURITY);
 	classRoster->printAll();
-
-	classRoster->printInvalidEmails();
-
-	for (int i = 0; i < maxSize; ++i) { //loop through printAverageDaysInCourse("A1")
-		ostringstream idOSS;
-		idOSS << "A" << i+1;
-		classRoster->printAverageDaysInCourse(idOSS.str()); 
-	}
-
-	classRoster->printByDegreeProgram(SOFTWARE);
 	
 	char exitSign = 'a';
 	while (exitSign != 'q') {

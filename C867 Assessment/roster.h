@@ -17,7 +17,9 @@ class Roster {
 public:
 	Roster(int maxSize);
 	~Roster();
-	Roster& operator=(const Roster& oldRoster); //FIX ME!! Need this here?
+	Roster(const Roster& oldRoster);
+	Roster& operator=(Roster oldRoster);
+	friend void swap(Roster& first, Roster& second);
 	void ParseStudentId(string studentData);
 	//required functions E(3)(a-f)
 	void add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, Degree type);
@@ -30,6 +32,7 @@ private:
 	int lastIndex;
 	int maxSize;
 	Student **students;
+	Student **tempStudents;
 	string studentId;
 	string firstName;
 	string lastName;
@@ -41,3 +44,11 @@ private:
 };
 
 #endif
+
+/*		Dynamically increase size of arr
+1. Allocte a new[] array and store it in a temp pointer
+2. Copy over the previous values that you want to keep
+3. Delete[] the old array
+4. Change the member variables, ptr and size to point to the 
+   new array and hold the new size.
+*/
