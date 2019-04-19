@@ -15,6 +15,7 @@ Roster::Roster(int maxSize) {
 	this->students = new Student*[maxSize]; // create new pointer array to hold student objects
 
 	for (int i = 0; i < maxSize; ++i) {
+		
 		ParseStudentId(studentData[i]);
 		if (degreeType == "SECURITY") {
 			students[i] = new SecurityStudent(studentId, firstName, lastName, email, age, daysInCourse, SECURITY);
