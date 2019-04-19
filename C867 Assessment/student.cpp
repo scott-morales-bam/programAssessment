@@ -1,7 +1,12 @@
 #include "student.h"
 
 Student::Student() {
-
+	studentId = "";
+	firstName = "";
+	lastName = "";
+	emailAddress = "";
+	studentAge = "";
+	this->daysInCourse = new int[3];
 }
 
 Student::Student(string studentId, string firstName, string lastName, string emailAddress, string age, int daysInCourse[], Degree type) {
@@ -15,30 +20,8 @@ Student::Student(string studentId, string firstName, string lastName, string ema
 }
 
 Student::~Student(){
-	cout << "Destructor called" << endl;
-	//delete dataObj;	//This throws exception
 	delete[] daysInCourse;
 }
-
-//Student::Student(const Student& oldStudent) {
-//	cout << "Copy constructor called" << endl;
-//	students = new Student*[maxSize];
-//	for (int i = 0; i < maxSize; ++i) {
-//		*students[i] = *(oldStudent.students[i]);
-//	}
-//}
-//
-//Student& Student::operator=(Student oldStudent) {
-//	cout << "Assignment op called." << endl;
-//	swap(*this, oldStudent);
-//	return *this;
-//}
-//
-//void swap(Student& first, Student& second) {
-//	cout << "Swap called";
-//	using std::swap;
-//	swap(first.students, second.students);
-//}
 
 //2a - Accessors
 string Student::GetStudentId() {
@@ -94,6 +77,5 @@ void Student::PrintData(){
 	cout << "\t Age: " << GetStudentAge() << "\t daysInCourse: ";
 	cout << "{" << tempdays[0] << ", " << tempdays[1] << ", " << tempdays[2] << "}";
 	cout << " Degree Program: " << GetDegreeProgram() << "." << endl;
-	delete[] tempdays;
 	return;
 }

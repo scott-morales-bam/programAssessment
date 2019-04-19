@@ -2,7 +2,6 @@
 
 SecurityStudent::SecurityStudent(string studentId, string firstName, string lastName, string emailAddress, string age, int daysInCourse[], Degree type) 
 	: Student(studentId, firstName, lastName, emailAddress, age, daysInCourse, type) {
-	//degreeProgram = new Degree;
 	degreeProgram = type;
 	degreeType = degreeProgram;
 }
@@ -21,6 +20,5 @@ void SecurityStudent::PrintData() {
 	cout << "\t Age: " << GetStudentAge() << "\t daysInCourse: ";
 	cout << "{" << tempdays[0] << ", " << tempdays[1] << ", " << tempdays[2] << "}";
 	cout << " Degree Program: Security." << endl;
-	//delete[] tempdays;
 	return;
 }

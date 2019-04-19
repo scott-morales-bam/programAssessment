@@ -39,37 +39,17 @@ Roster::~Roster() {
 	delete[] students;
 }
 
-//Roster::Roster(const Roster& oldRoster) {
-//	cout << "Copy constructor called" << endl;
-//	students = new Student*[maxSize];
-//	for (int i = 0; i < maxSize; ++i) {
-//		*students[i] = *(oldRoster.students[i]);
-//	}
-//}
-//
-//Roster& Roster::operator=(Roster oldRoster) {
-//	cout << "Assignment op called." << endl;
-//	swap(*this, oldRoster);
-//	return *this;
-//}
-//
-//void swap(Roster& first, Roster& second) {
-//	cout << "Swap called";
-//	using std::swap;
-//	swap(first.students, second.students);
-//}
-
 void Roster::ParseStudentId(string studentData) {
 	stringstream studentSS(studentData);
 	vector<string> studentDataVector;
-	//parse string
-	for (int i = 0; i < 9; ++i) {
+	
+	for (int i = 0; i < 9; ++i) {	//parse string
 		string substr;
 		getline(studentSS, substr, ',');
 		studentDataVector.push_back(substr);
 	}
-	//set to data members
-	studentId   = studentDataVector.at(0);
+	
+	studentId   = studentDataVector.at(0);	//set to data members
 	firstName   = studentDataVector.at(1);
 	lastName    = studentDataVector.at(2);
 	email       = studentDataVector.at(3);
@@ -124,7 +104,7 @@ void Roster::remove(string studentID) {
 			return;
 		}
 	}
-	cout << "Error: Student not found...";
+	cout << "Error: Student not found..." << endl;
 	return;
 }
 
@@ -199,12 +179,8 @@ int main() {
 
 	classRoster->printByDegreeProgram(SOFTWARE);
 
-	classRoster->add("A6", "Bob", "Stevens", "bobsteven.com", 34, 10, 20, 30, SECURITY);
-	classRoster->printAll();
-	classRoster->printAverageDaysInCourse("A6");
-	classRoster->remove("A6");
-	classRoster->printAll();
-
+	classRoster->remove("A3");
+	classRoster->remove("A3");
 
 	char exitSign = 'a';
 	while (exitSign != 'q') {
