@@ -9,7 +9,6 @@ Roster::Roster(int maxSize) {
 		"A5,Robert,Morales,rmora46@my.wgu.edu,31,15,31,45,SOFTWARE"
 	};
 
-	cout << "Created roster \n" << endl;
 	this->lastIndex = -1;
 	this->maxSize = maxSize;
 	this->students = new Student*[maxSize]; // create new pointer array to hold student objects
@@ -109,25 +108,39 @@ void Roster::add(string studentID, string firstName, string lastName, string ema
 	}
 	else {
 		cout << "Improper or unassigned degree type" << endl;
+		return;
 	}
+	cout << endl << "Student added." << endl;
 	return;
 }
 
 void Roster::remove(string studentID) {
+	cout << endl;
+	for (int i = 0; i < maxSize; ++i) {
+		if (students[i]->GetStudentId() == studentID) {
+			cout << "Deleting: " << students[i]->GetStudentId() << endl;
+			for (; i < maxSize - 1; ++i) students[i] = students[i + 1];
+			--maxSize;
+			return;
+		}
+	}
+	cout << "Error: Student not found...";
 	return;
 }
 
 void Roster::printAll() {
+	cout << endl;
 	int i = 0;
 	for (int i = 0; i < maxSize; ++i) {
 		cout << i + 1 << "   ";
 		students[i]->PrintData();
 	}
+
 	return;
 }
 
 void Roster::printInvalidEmails() {
-	cout << "\nPrint invalid emails: \n" << endl;
+	cout << endl << "\nPrint invalid emails: \n" << endl;
 	for (int i = 0; i < maxSize; ++i) {
 		string email = students[i]->GetEmailAddress();
 		int positionAtSign = email.find('@');
@@ -140,6 +153,7 @@ void Roster::printInvalidEmails() {
 }
 
 void Roster::printAverageDaysInCourse(string studentID) {
+	cout << endl;
 	for (int i = 0; i < maxSize; ++i) {
 		if (students[i]->GetStudentId() == studentID) {
 			cout << "student ID: " << students[i]->GetStudentId();
@@ -148,8 +162,8 @@ void Roster::printAverageDaysInCourse(string studentID) {
 			for (int j = 0; j < 3; ++j) {
 				avgDays += tempDays[j];
 			}
-			cout << "\tAverage number of days: " << avgDays / 3 << endl;
-			break;
+			cout << "\tAverage number of days: " << avgDays / 3 << endl << endl;
+			return;
 		}
 	}
 }
@@ -186,6 +200,9 @@ int main() {
 	classRoster->printByDegreeProgram(SOFTWARE);
 
 	classRoster->add("A6", "Bob", "Stevens", "bobsteven.com", 34, 10, 20, 30, SECURITY);
+	classRoster->printAll();
+	classRoster->printAverageDaysInCourse("A6");
+	classRoster->remove("A6");
 	classRoster->printAll();
 
 
