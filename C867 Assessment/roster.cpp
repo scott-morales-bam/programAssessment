@@ -136,7 +136,7 @@ void Roster::printAverageDaysInCourse(string studentID) {
 	cout << endl;
 	for (int i = 0; i < maxSize; ++i) {
 		if (students[i]->GetStudentId() == studentID) {
-			cout << "student ID: " << students[i]->GetStudentId();
+			cout << "Student ID: " << students[i]->GetStudentId();
 			int *tempDays = students[i]->GetDaysInCourse();
 			int avgDays = 0;
 			for (int j = 0; j < 3; ++j) {
@@ -163,7 +163,7 @@ void Roster::printByDegreeProgram(Degree degreeProgram) {
 int main() {
 	int maxSize = 5;
 	
-	cout << "C867 Scripting and Programming\t C++    #000954923   Robert Morales" << endl << endl;
+	cout << endl << "C867 Scripting and Programming\t C++    #000954923   Robert Morales" << endl << endl;
 	
 	Roster* classRoster = new Roster(maxSize);   //create classRoster, add each student to classRoster
 
