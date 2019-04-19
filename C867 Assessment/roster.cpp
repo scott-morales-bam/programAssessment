@@ -89,11 +89,11 @@ void Roster::add(string studentID, string firstName, string lastName, string ema
 	this->age = to_string(age);
 	
 
-	//tempStudents = new Student*[maxSize];
-	tempStudents(students);
+	Student **tempStudents = new Student*[maxSize];
+	for (int i = 0; i < maxSize; i++) tempStudents[i] = students[i];
 	delete[] students;
 	students = new Student*[++maxSize];
-	students = tempStudents;
+	for (int i = 0; i < maxSize - 1; i++) students[i] = tempStudents[i];
 
 	if (type == SECURITY) {
 		students[lastIndex + 1] = new SecurityStudent(studentID, firstName, lastName, emailAddress, this->age, daysInCourse, SECURITY);
@@ -118,6 +118,7 @@ void Roster::remove(string studentID) {
 }
 
 void Roster::printAll() {
+	int i = 0;
 	for (int i = 0; i < maxSize; ++i) {
 		cout << i + 1 << "   ";
 		students[i]->PrintData();

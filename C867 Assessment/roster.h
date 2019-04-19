@@ -32,7 +32,7 @@ private:
 	int lastIndex;
 	int maxSize;
 	Student **students;
-	Student **tempStudents;
+	//Student **tempStudents;
 	string studentId;
 	string firstName;
 	string lastName;

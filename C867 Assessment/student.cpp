@@ -20,6 +20,26 @@ Student::~Student(){
 	delete[] daysInCourse;
 }
 
+//Student::Student(const Student& oldStudent) {
+//	cout << "Copy constructor called" << endl;
+//	students = new Student*[maxSize];
+//	for (int i = 0; i < maxSize; ++i) {
+//		*students[i] = *(oldStudent.students[i]);
+//	}
+//}
+//
+//Student& Student::operator=(Student oldStudent) {
+//	cout << "Assignment op called." << endl;
+//	swap(*this, oldStudent);
+//	return *this;
+//}
+//
+//void swap(Student& first, Student& second) {
+//	cout << "Swap called";
+//	using std::swap;
+//	swap(first.students, second.students);
+//}
+
 //2a - Accessors
 string Student::GetStudentId() {
 	return studentId;

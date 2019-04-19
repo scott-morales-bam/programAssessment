@@ -11,6 +11,9 @@ public:
 	Student();
 	Student(string studentId, string firstName, string lastName, string emailAddress, string age, int daysInCourse[], Degree type);
 	~Student();
+	/*Student(const Student& oldStudent);
+	Student& operator=(Student oldStudent);
+	friend void swap(Student& first, Student& second);*/
 	//2a - Accessors
 	string GetStudentId();
 	string GetFirstName();
