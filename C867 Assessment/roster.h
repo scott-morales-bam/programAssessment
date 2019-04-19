@@ -17,9 +17,9 @@ class Roster {
 public:
 	Roster(int maxSize);
 	~Roster();
-	Roster(const Roster& oldRoster);
+	/*Roster(const Roster& oldRoster);
 	Roster& operator=(Roster oldRoster);
-	friend void swap(Roster& first, Roster& second);
+	friend void swap(Roster& first, Roster& second);*/
 	void ParseStudentId(string studentData);
 	//required functions E(3)(a-f)
 	void add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, Degree type);

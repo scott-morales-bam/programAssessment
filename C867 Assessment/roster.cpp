@@ -40,25 +40,25 @@ Roster::~Roster() {
 	delete[] students;
 }
 
-Roster::Roster(const Roster& oldRoster) {
-	cout << "Copy constructor called" << endl;
-	students = new Student*[maxSize];
-	for (int i = 0; i < maxSize; ++i) {
-		*students[i] = *(oldRoster.students[i]);
-	}
-}
-
-Roster& Roster::operator=(Roster oldRoster) {
-	cout << "Assignment op called." << endl;
-	swap(*this, oldRoster);
-	return *this;
-}
-
-void swap(Roster& first, Roster& second) {
-	cout << "Swap called";
-	using std::swap;
-	swap(first.students, second.students);
-}
+//Roster::Roster(const Roster& oldRoster) {
+//	cout << "Copy constructor called" << endl;
+//	students = new Student*[maxSize];
+//	for (int i = 0; i < maxSize; ++i) {
+//		*students[i] = *(oldRoster.students[i]);
+//	}
+//}
+//
+//Roster& Roster::operator=(Roster oldRoster) {
+//	cout << "Assignment op called." << endl;
+//	swap(*this, oldRoster);
+//	return *this;
+//}
+//
+//void swap(Roster& first, Roster& second) {
+//	cout << "Swap called";
+//	using std::swap;
+//	swap(first.students, second.students);
+//}
 
 void Roster::ParseStudentId(string studentData) {
 	stringstream studentSS(studentData);
@@ -173,21 +173,22 @@ int main() {
 	
 	Roster* classRoster = new Roster(maxSize);   //create classRoster, add each student to classRoster
 
-	//classRoster->printAll();
+	classRoster->printAll();
 
-	//classRoster->printInvalidEmails();
+	classRoster->printInvalidEmails();
 
-	//for (int i = 0; i < maxSize; ++i) { //loop through printAverageDaysInCourse("A1")
-	//	ostringstream idOSS;
-	//	idOSS << "A" << i+1;
-	//	classRoster->printAverageDaysInCourse(idOSS.str()); 
-	//}
+	for (int i = 0; i < maxSize; ++i) { //loop through printAverageDaysInCourse("A1")
+		ostringstream idOSS;
+		idOSS << "A" << i+1;
+		classRoster->printAverageDaysInCourse(idOSS.str()); 
+	}
 
-	//classRoster->printByDegreeProgram(SOFTWARE);
+	classRoster->printByDegreeProgram(SOFTWARE);
 
 	classRoster->add("A6", "Bob", "Stevens", "bobsteven.com", 34, 10, 20, 30, SECURITY);
 	classRoster->printAll();
-	
+
+
 	char exitSign = 'a';
 	while (exitSign != 'q') {
 		
